@@ -1,0 +1,63 @@
+.div-login{
+    position: absolute;
+    width: 200%;
+    max-width: 200px;
+    padding: 100px 100px 100px;
+    background:rgba(0,0,0,0.7);
+    border-radius: 20px;
+    color:#dbdbdb;
+    top: 50%;
+    left: 50%;
+    margin: -180px 0 0 -220px;
+} 
+#idjaMiresevini{
+    color:white;
+    position:relative;
+    font-size: 20px;
+}
+#idja2Miresevini{
+    color:white;
+    position:relative;
+    font-size:9px;
+}
+.div-login-logo{
+    height: 50px;
+    width: 50px;
+    align-self: center;
+}
+.email{
+    padding-bottom:15px;
+    width:200px;
+    align-items:center;
+    border-radius:5px;
+}
+.password{
+    padding-bottom:15px;
+    width:200px;
+}
+input{
+    width: 95%;
+    border: 1px solid #dbdbdb;
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 5px;
+    background-color: #fafafa;
+    box-shadow: none;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+button{
+    width: 100%;
+    margin: 5px 0;
+    background-color:#90EE90;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 5px;
+    font-weight: 600;
+    border: none;
+    color: green;
+    border-radius: 100px;
+}
+body{
+ background-image: url("./assets/backgroundi-JS.jpg");
+ background-size: cover;
+ font-family: sans-serif;
+ }
