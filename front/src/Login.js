@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './assets/backgroundi-JS.jpg'
+
 import './login.css';
 class Login extends React.Component{
     state={
@@ -22,11 +22,11 @@ class Login extends React.Component{
                 </div>
                 <div >
                     <form onSubmit = {this.handleSubmit}>
-                       <label id='idjaMiresevini' >
+                       <label class='idjaMiresevini' >
                            Mirësevini
                            <br />
                       </label>
-                      <label id='idja2Miresevini'>
+                      <label class='idja2Miresevini'>
              
                           Shënoni të dhënat tuaja për tu kyqur në llogari
                     </label>
@@ -37,8 +37,10 @@ class Login extends React.Component{
                         <input type='password' name='pwd'  placeholder='Type your password...' required onChange={this.handleChange}/>
                         </div>
                         <div class='button'>
-                        <button onSubmit={this.handleSubmit}>Log In</button>                        
+                        <button onSubmit={this.handleSubmit}>Log In</button>    
+                                            
                         </div>
+                        <button onSubmit={this.handleSubmit}>Register</button>
                     </form>
                 </div>
             </div>

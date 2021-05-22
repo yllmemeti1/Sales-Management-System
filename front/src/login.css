@@ -1,7 +1,7 @@
 .div-login{
     position: absolute;
     width: 200%;
-    max-width: 200px;
+    max-width: fit-content;
     padding: 100px 100px 100px;
     background:rgba(0,0,0,0.7);
     border-radius: 20px;
@@ -10,15 +10,16 @@
     left: 50%;
     margin: -180px 0 0 -220px;
 } 
-#idjaMiresevini{
-    color:white;
+.idjaMiresevini{
+    color:rgb(44, 197, 44);
     position:relative;
-    font-size: 20px;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial,;
 }
-#idja2Miresevini{
-    color:white;
-    position:relative;
-    font-size:9px;
+.idja2Miresevini{
+    color:rgb(44, 197, 44);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+    font-size:12px;
 }
 .div-login-logo{
     height: 50px;
@@ -35,16 +36,26 @@
     padding-bottom:15px;
     width:200px;
 }
-input{
-    width: 95%;
+::placeholder{
+    color: rgba(0, 0, 0, 0.61);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: fit-content;
+}
+input {
+    
+    width: 100%;
     border: 1px solid #dbdbdb;
-    padding: 5px;
-    margin: 2px 0;
-    border-radius: 5px;
-    background-color: #fafafa;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 10px;
     box-shadow: none;
     font-family: 'Open Sans Condensed', sans-serif;
+    height: 20px;
 }
+.email{
+    margin-top: 15px;
+    
+}
+
 button{
     width: 100%;
     margin: 5px 0;
@@ -58,6 +69,8 @@ button{
 }
 body{
  background-image: url("./assets/backgroundi-JS.jpg");
- background-size: cover;
+ background-size:auto;
  font-family: sans-serif;
+ background-repeat: no-repeat;
+ 
  }
