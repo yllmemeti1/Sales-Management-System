@@ -53,14 +53,18 @@ class Login extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
+            <div class="buttons">
             <div class="button1">
               <button onSubmit={this.handleSubmit}>Log In</button>
             </div>
+            </div>
           </form>
+          <div class="buttons">
 
           <Link to="/register">
             <button> Register </button>
           </Link>
+          </div>
         </div>
       </div>
     );
