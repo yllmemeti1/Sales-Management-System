@@ -13,8 +13,8 @@ class Login extends React.Component{
     {
         this.props.history.push("./Register/Form.js");
     }
-    nextPath() {
-        this.props.history.push('./Register/Form.js');
+    nextPath(path) {
+        this.props.history.push(path);
       }
 
     state={
@@ -54,6 +54,12 @@ class Login extends React.Component{
                         <div class='password'>
                         <input type='password' name='pwd'  placeholder='Type your password...' required onChange={this.handleChange}/>
                         </div>
+                        <div class='email'>
+                        <input type='email' name='email' placeholder='Type your email...' required onChange={this.handleChange}/>
+                        </div>
+                        <div class='password'>
+                        <input type='password' name='pwd'  placeholder='Type your password...' required onChange={this.handleChange}/>
+                        </div>
                         <div class='button1'>
                         <button onSubmit={this.handleSubmit}>Log In</button>    
                                             
@@ -61,7 +67,7 @@ class Login extends React.Component{
                        
                     </form>
                    
-                    <button onClick={() => this.nextPath() }> Register </button>
+                    <button onClick={() => this.nextPath('../Login/Login.js') }> Register </button>
                 </div>
             </div>
         )
