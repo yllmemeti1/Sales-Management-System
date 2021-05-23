@@ -1,7 +1,20 @@
 import React from 'react';
+import {Route, Switch} from "react-router-dom";
 
 import './login.css';
+import { Redirect } from 'react-router-dom';
+
 class Login extends React.Component{
+    constructor(props) {
+        super(props);
+        this.setRedirect = this.setRedirect.bind(this)
+    }
+    setRedirect()
+    {
+        this.props.history.push("./Register/Form.js");
+    }
+
+
     state={
         email:'',
         pwd:''
@@ -14,8 +27,11 @@ class Login extends React.Component{
         e.preventDefault()
         this.props.isLogin(true)
     }
+   
+    
     render(){
         return(
+           
             <div className='div-login'>
                 <div >
                     {/* <img src={Logo} alt="Logo" />; */}
@@ -36,12 +52,14 @@ class Login extends React.Component{
                         <div class='password'>
                         <input type='password' name='pwd'  placeholder='Type your password...' required onChange={this.handleChange}/>
                         </div>
-                        <div class='button'>
+                        <div class='button1'>
                         <button onSubmit={this.handleSubmit}>Log In</button>    
                                             
                         </div>
-                        <button onSubmit={this.handleSubmit}>Register</button>
+                       
                     </form>
+                   
+                    <button onClick={this.setRedirect}>Register</button>
                 </div>
             </div>
         )
