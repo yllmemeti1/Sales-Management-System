@@ -9,6 +9,7 @@
     top: 50%;
     left: 50%;
     margin: -180px 0 0 -220px;
+    
 } 
 .idjaMiresevini{
     color:rgb(44, 197, 44);
@@ -36,28 +37,11 @@
     padding-bottom:15px;
     width:200px;
 }
-::placeholder{
-    color: rgba(0, 0, 0, 0.61);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: fit-content;
+.buttons{
+    padding-left: 20%;
 }
-input {
-    
-    width: 100%;
-    border: 1px solid #dbdbdb;
-    background-color: rgba(255,255,255, 0.6);
-    border-radius: 10px;
-    box-shadow: none;
-    font-family: 'Open Sans Condensed', sans-serif;
-    height: 20px;
-}
-.email{
-    margin-top: 15px;
-    
-}
-
 button{
-    width: 100%;
+    width: 70%;
     margin: 5px 0;
     background-color:#90EE90;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -67,6 +51,26 @@ button{
     color: green;
     border-radius: 100px;
 }
+::placeholder{
+    color: rgba(0, 0, 0, 0.61);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: fit-content;
+}
+input {
+    width: 119%;
+    border: 1px solid #dbdbdb;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 15px;
+    box-shadow: none;
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: 25px;
+}
+.email{
+    margin-top: 15px;
+    
+}
+
+
 body{
  background-image: url("../assets/backgroundi-JS.jpg");
  background-size:auto;

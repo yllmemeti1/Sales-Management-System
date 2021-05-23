@@ -4,11 +4,11 @@ import './Form.css';
 
 const FormSuccess = () => {
   return (
-    <div className='form-content-right'>
-      <h1 className='form-success'>Ne kemi marrë kërkesën tuaj. Ju lutem prisni deri sa dikush nga staffi
-       jon te shqyrtoj kerkesen tuaj!</h1>
+    <div className='form-content-success'>
+      <h1 className='form-success'>Ne kemi marrë kërkesën tuaj. Ju lutem prisni deri sa dikush nga stafi
+       jonë të shqyrtoj kërkesën tuaj!</h1>
        
-      <img className='form-img-2' src='img/img-3.svg' alt='success-image' />
+      
     </div>
   );
 };

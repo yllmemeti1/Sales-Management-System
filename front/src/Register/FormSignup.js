@@ -18,30 +18,31 @@ const FormSignup = ({ submitForm }) => {
           më poshtë.
         </h1>
         <div className="form-inputs">
-          <label className="form-label">Emri</label>
+          <label className="form-label">Emri dhe Mbiemri</label>
+          <input
+            className="form-input"
+            type="text"
+            name="surname"
+            placeholder="Shkruani Emrin dhe Mbiemrin"
+            value={values.surname}
+            onChange={handleChange}
+          />
+          {errors.surname && <p>{errors.surname}</p>}
+        </div>
+        <div className="form-inputs">
+          <label className="form-label">Username</label>
           <input
             className="form-input"
             type="text"
             name="username"
-            placeholder="Shkruani Emrin tuaj"
+            placeholder="Shkruani Username-in"
             value={values.username}
             onChange={handleChange}
           />
           {errors.username && <p>{errors.username}</p>}
         </div>
 
-        <div className="form-inputs">
-          <label className="form-label">Mbiemri</label>
-          <input
-            className="form-input"
-            type="text"
-            name="surname"
-            placeholder="Shkruani Mbiemrin tuaj"
-            value={values.surname}
-            onChange={handleChange}
-          />
-          {errors.username && <p>{errors.username}</p>}
-        </div>
+        
 
         <div className="form-inputs">
           <label className="form-label">Email</label>
@@ -49,7 +50,7 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             type="email"
             name="email"
-            placeholder="Shkruani email-in tuaj"
+            placeholder="Shkruani Email-in"
             value={values.email}
             onChange={handleChange}
           />
@@ -61,26 +62,26 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             type="password"
             name="password"
-            placeholder="Shkruani password-in tauj"
+            placeholder="Shkruani Password-in"
             value={values.password}
             onChange={handleChange}
           />
           {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-inputs">
-          <label className="form-label">Konfirmo Password-in</label>
+          <label className="form-label">Numri i Telefonit</label>
           <input
             className="form-input"
-            type="password"
-            name="password2"
-            placeholder="Konfirmoni password-in tuaj"
-            value={values.password2}
+            type="text"
+            name="kontakti"
+            placeholder="Kontakti"
+            value={values.kontakti}
             onChange={handleChange}
           />
-          {errors.password2 && <p>{errors.password2}</p>}
+          {errors.kontakti && <p>{errors.kontakti}</p>}
         </div>
         <button className="form-input-btn" type="submit">
-          Aplikoni per regjistrim
+          Regjistrohu
         </button>
         <span className="form-input-login">
           Posedoni një llogari? Kyquni{" "}

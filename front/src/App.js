@@ -9,6 +9,9 @@ function App() {
     <div className="wrapper">
       <BrowserRouter>
         <Switch>
+          <Route exact path="/">
+    <Login />
+</Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register}></Route>
           <Route path="/"></Route>
