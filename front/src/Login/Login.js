@@ -1,74 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
+import axios from "axios";
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const Login = (props) => {
+  const [input, setInput] = useState({});
 
-  state = {
-    email: "",
-    pwd: "",
-  };
+  const history = useHistory();
 
-  handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    setInput({ ...input, [name]: value });
   };
-  
-  handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    /*artiola*/
+
+    try {
+      const res = await axios.post("http://localhost:5000/api/Account/Login", {
+        ...input,
+      });
+
+      localStorage.setItem("sms_token", res.data.token);
+      history.push("/dashboard");
+    } catch (err) {
+      alert("Incorrect email/passsword");
+    }
   };
 
-  render() {
-    return (
-      <div className="div-login">
-        <div>{/* <img src={Logo} alt="Logo" />; */}</div>
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label class="idjaMiresevini">
-              Mirësevini
-              <br />
-            </label>
-            <label class="idja2Miresevini">
-              Shënoni të dhënat tuaja për tu kyqur në llogari
-            </label>
-            <div class="email">
-              <input
-                type="email"
-                name="email"
-                placeholder="Type your email..."
-                required
-                onChange={this.handleChange}
-              />
-            </div>
-            <div class="password">
-              <input
-                type="password"
-                name="pwd"
-                placeholder="Type your password..."
-                required
-                onChange={this.handleChange}
-              />
-            </div>
-            <div class="buttons">
-            <div class="button1">
-              <button onSubmit={this.handleSubmit}>Log In</button>
-            </div>
-            </div>
-          </form>
+  return (
+    <div className="div-login">
+      <div>{/* <img src={Logo} alt="Logo" />; */}</div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label class="idjaMiresevini">
+            Mirësevini
+            <br />
+          </label>
+          <label class="idja2Miresevini">
+            Shënoni të dhënat tuaja për tu kyqur në llogari
+          </label>
+          <div class="email">
+            <input
+              type="email"
+              name="email"
+              placeholder="Type your email..."
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div class="password">
+            <input
+              type="password"
+              name="password"
+              placeholder="Type your password..."
+              required
+              onChange={handleChange}
+            />
+          </div>
           <div class="buttons">
-
+            <div class="button1">
+              <button onSubmit={handleSubmit}>Log In</button>
+            </div>
+          </div>
+        </form>
+        <div class="buttons">
           <Link to="/register">
             <button> Register </button>
           </Link>
-          </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 export default Login;
