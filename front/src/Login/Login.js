@@ -19,7 +19,8 @@ class Login extends React.Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    /*this.props.isLogin(true);*/
+    
+    /*artiola*/
   };
 
   render() {
