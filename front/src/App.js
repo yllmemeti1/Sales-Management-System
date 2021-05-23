@@ -1,35 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-//import Register from '.Register/Form';
-import Login from './Login/Login.js';
-
+import "./App.css";
+import React from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Register from "./Register/Form";
+import Login from "./Login/Login";
 
 function App() {
   return (
-   
-   
-    
     <div className="wrapper">
-     
-  
-    <BrowserRouter>
-    
-      <Switch>
-      <Login />
-        <Route exact path="./Login/Login.js" exact  component='Login'>
-        
-         
-        </Route>
-        <Route path="/">
-         
-        </Route>
-      </Switch>
-    </BrowserRouter>
-</div>
-);
-  
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/register" component={Register}></Route>
+          <Route path="/"></Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
