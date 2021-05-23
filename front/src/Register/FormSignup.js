@@ -35,7 +35,7 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             type="text"
             name="username"
-            placeholder="Shkruani Username"
+            placeholder="Shkruani Username-in"
             value={values.username}
             onChange={handleChange}
           />
@@ -50,7 +50,7 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             type="email"
             name="email"
-            placeholder="Shkruani email-in tuaj"
+            placeholder="Shkruani Email-in"
             value={values.email}
             onChange={handleChange}
           />
@@ -62,7 +62,7 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             type="password"
             name="password"
-            placeholder="Shkruani password-in tauj"
+            placeholder="Shkruani Password-in"
             value={values.password}
             onChange={handleChange}
           />
