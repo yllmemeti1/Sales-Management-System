@@ -4,14 +4,14 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Register from "./Register/Form";
 import Login from "./Login/Login";
 import PrivateRoute from "./shared/PrivateRoute";
-import Dashboard from "./Dashboard/Dashboard";
+import Dashboard from "./Navbar/Navbar";
 
 function App() {
   return (
     <div className="wrapper">
       <BrowserRouter>
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/">
             <Login />
           </Route>
