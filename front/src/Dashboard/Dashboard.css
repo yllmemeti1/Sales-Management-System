@@ -1,0 +1,14 @@
+.box1{
+    height:250px;
+    width:250px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.box2{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ float:center;
+ 
+ text-align: center;
+
+}

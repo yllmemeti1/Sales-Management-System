@@ -39,7 +39,7 @@
 .buttons {
   padding-left: 20%;
 }
-button {
+.button12 {
   width: 70%;
   margin: 5px 0;
   background-color: #90ee90;
@@ -50,6 +50,7 @@ button {
   color: green;
   border-radius: 100px;
 }
+
 ::placeholder {
   color: rgba(0, 0, 0, 0.61);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;

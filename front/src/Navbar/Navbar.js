@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './NavbarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Dashboard() {
   const [sidebar, setSidebar] = useState(false);
@@ -20,9 +22,10 @@ function Dashboard() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <form class="forma form-inline my-2 my-lg-0">
+          <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Kerko..." aria-label="Search"/>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kerko</button>
+    <Button variant="primary" type="submit">Kerko</Button>
+    <Button variant="secondary" type="submit">Shto Produktin</Button>
   </form>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

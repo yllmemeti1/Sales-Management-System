@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Register from "./Register/Form";
 import Login from "./Login/Login";
 import PrivateRoute from "./shared/PrivateRoute";
-import Dashboard from "./Navbar/Navbar";
+import Dashboard from "./Dashboard/Dashboard";
+
 
 function App() {
   return (
