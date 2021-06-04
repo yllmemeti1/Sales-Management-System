@@ -23,11 +23,7 @@ function Dashboard() {
         <Col><div class="box1"><div class="box2">Shitje Javore</div></div></Col>
       </Row>
       </Container>
-    
-       
-        
-          
-     
+      
        
      
     </>
