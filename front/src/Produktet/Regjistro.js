@@ -13,8 +13,8 @@ function Regjistro() {
       <div class="forma1">
        <Form>
   <Form.Group controlId="exampleForm.ControlInput1">
-    <Form.Label>Emri</Form.Label>
-    <Form.Control type="email" placeholder="Emri juaj..." />
+    <Form.Label>Emri i Produktit</Form.Label>
+    <Form.Control type="text" placeholder="Emri Produktit" />
   </Form.Group>
   <Form.Group controlId="exampleForm.ControlSelect1">
     <Form.Label>Kategoria</Form.Label>
@@ -36,20 +36,19 @@ function Regjistro() {
       <option>5</option>
     </Form.Control>
   </Form.Group>
-  <Form.Group controlId="exampleForm.ControlSelect2">
-    <Form.Label>Example multiple select</Form.Label>
-    <Form.Control as="select" multiple>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Njesi ne Stock</Form.Label>
+    <Form.Control type="number" placeholder="Njesi" />
   </Form.Group>
-  <Form.Group controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Example textarea</Form.Label>
-    <Form.Control as="textarea" rows={3} />
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Qmimi</Form.Label>
+    <Form.Control type="number" placeholder="Euro" />
   </Form.Group>
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Zbritje</Form.Label>
+    <Form.Control type="number" placeholder="Zbritje %" />
+  </Form.Group>
+  <Button variant="primary">Shto Produktin</Button>
 </Form>
 </div>
         
