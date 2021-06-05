@@ -5,6 +5,7 @@ import Register from "./Register/Form";
 import Login from "./Login/Login";
 import PrivateRoute from "./shared/PrivateRoute";
 import Dashboard from "./Dashboard/Dashboard";
+import Regjistro from "./Produktet/Regjistro";
 
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
           </Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register}></Route>
+          <Route exact path="/Regjistro" component={Regjistro}></Route>
           <Route path="/"></Route>
+          
         </Switch>
       </BrowserRouter>
     </div>

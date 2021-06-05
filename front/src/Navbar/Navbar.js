@@ -25,7 +25,9 @@ function Dashboard() {
           <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Kerko..." aria-label="Search"/>
     <Button variant="primary" type="submit">Kerko</Button>
+    <Link to="/Regjistro">
     <Button variant="secondary" type="submit">Shto Produktin</Button>
+    </Link>
   </form>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
