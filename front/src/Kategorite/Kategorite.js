@@ -1,14 +1,28 @@
 import Navbar from '../Navbar/Navbar';
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect }  from 'react';
+import axios from 'axios';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col} from 'reactstrap';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
+
 import { Button,Form } from 'react-bootstrap';
 import "./Kategorite.css";
-function Kategorite() {
+export default function Kategorite() {
+
+  const apiURL="http://localhost:63717/api/Category";
+  
+  const getKategorite = () => {
+    axios.get(apiURL).then((response) => {
+
+      const allKategories = response.data.kategorite.allKategories;
+    })
+    .catch(error => console.error('Error: ${error}'));
+  }
+
+ 
+    
     return (
       <>
+      
       <Navbar />
       <div class="forma1">
        <Form>
@@ -21,10 +35,9 @@ function Kategorite() {
 </Form>
 </div>
         
-         
+
        
       </>
     );
-  }
   
-  export default Kategorite;
+} 
