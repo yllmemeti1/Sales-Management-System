@@ -6,13 +6,9 @@
 
   <ItemGroup>
     <Compile Remove="Common\Models\NewFolder1\**" />
-    <Compile Remove="Common\Models\NewFolder\**" />
     <Content Remove="Common\Models\NewFolder1\**" />
-    <Content Remove="Common\Models\NewFolder\**" />
     <EmbeddedResource Remove="Common\Models\NewFolder1\**" />
-    <EmbeddedResource Remove="Common\Models\NewFolder\**" />
     <None Remove="Common\Models\NewFolder1\**" />
-    <None Remove="Common\Models\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
