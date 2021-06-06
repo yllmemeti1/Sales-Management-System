@@ -13,36 +13,46 @@ function Dashboard() {
         <Row>
           <Col>
             <div class="box1">
-              <div class="box2">Kategori te listuara</div>
+              <Link to="/dashboard">
+                <div class="box2">Kategori te listuara</div>
+              </Link>
             </div>
           </Col>
           <Col>
             <div class="box1">
-              <div class="box2">Kompani te listuara</div>
+              <Link to="/furnitoret">
+                <div class="box2">Furnitor te listuar</div>
+              </Link>
             </div>
           </Col>
-          <Link to="/produktet">
-            <Col>
-              <div class="box1">
+          <Col>
+            <div class="box1">
+              <Link to="/produktet">
                 <div class="box2">Produkte te regjistuara</div>
-              </div>
-            </Col>
-          </Link>
+              </Link>
+            </div>
+          </Col>
         </Row>
         <Row>
           <Col>
             <div class="box1">
-              <div class="box2">Shitje Totale</div>
+              <Link to="/dashboard">
+                <div class="box2">Shitje Totale</div>
+              </Link>
             </div>
           </Col>
           <Col>
             <div class="box1">
-              <div class="box2">Shitje Ditore</div>
+              <Link to="/dashboard">
+                <div class="box2">Shitje Ditore</div>
+              </Link>
             </div>
           </Col>
           <Col>
             <div class="box1">
-              <div class="box2">Shitje Javore</div>
+              <Link to="/dashboard">
+                <div class="box2">Shitje Javore</div>
+              </Link>
             </div>
           </Col>
         </Row>
