@@ -23,7 +23,7 @@ namespace Sales_Managment_System.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
-            return Ok(await _context.Products.ToListAsync());
+            return Ok(await _context.Products.Include(p => p.Category).Include(p => p.SubCategory).ToListAsync());
         }
 
         [HttpGet("{productId}")]
