@@ -43,6 +43,7 @@ namespace Sales_Managment_System.Controllers
         {
             var customer = new Customer
             {
+                Id = Guid.NewGuid().ToString(),
                 FirstName = customerDto.FirstName,
                 LastName = customerDto.LastName,
                 Contact = customerDto.Contact,
