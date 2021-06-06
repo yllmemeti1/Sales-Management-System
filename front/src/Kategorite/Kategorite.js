@@ -8,6 +8,7 @@ import { Button,Form } from 'react-bootstrap';
 import "./Kategorite.css";
 export default function Kategorite() {
 
+  /*kategorite*/
   const apiURL="http://localhost:63717/api/Category";
   
   const getKategorite = () => {
