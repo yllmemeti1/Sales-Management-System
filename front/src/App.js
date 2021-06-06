@@ -10,6 +10,10 @@ import ProductsList from "./Products/ProductsList";
 import ProductDetails from "./Products/ProductDetails";
 import AddProduct from "./Products/AddProduct";
 import EditProduct from "./Products/EditProduct";
+import SuppliersList from "./Suppliers/SupplierList";
+import AddSupplier from "./Suppliers/AddSupplier";
+import SupplierDetails from "./Suppliers/SupplierDetails";
+import EditSupplier from "./Suppliers/EditSupplier";
 
 
 import CategoriesList from "./Kategorite/CategoriesList";
@@ -40,6 +44,15 @@ function App() {
           <Route exact path="/produktet/:id" component={ProductDetails} />
           <Route exact path="/produktet/ndrysho/:id" component={EditProduct} />
 
+          <Route exact path="/furnitoret" component={SuppliersList} />
+          <Route exact path="/furnitoret/regjistro" component={AddSupplier} />
+          <Route exact path="/furnitoret/:id" component={SupplierDetails} />
+          <Route
+            exact
+            path="/furnitoret/ndrysho/:id"
+            component={EditSupplier}
+          />
+              
           <Route exact path="/customers" component={CustomerList} />
           <Route exact path="/customers/regjistro" component={CustomerDetails} />
           <Route exact path="/customers/:id" component={AddCustomer} />
