@@ -8,11 +8,11 @@ namespace Sales_Managment_System.Controllers
 
    public class BaseController : ControllerBase
    {
-        [Authorize]
-        [HttpGet]
-        public IActionResult Protected()
-        {
-            return Ok("This is a protected route");
-        }
+        //[Authorize]
+        //[HttpGet]
+        //public IActionResult Protected()
+        //{
+        //    return Ok("This is a protected route");
+        //}
    }
 }
