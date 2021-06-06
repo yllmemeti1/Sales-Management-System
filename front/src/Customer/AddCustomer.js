@@ -8,11 +8,10 @@ import axios from "axios";
 
 function AddCustomer() {
   const [customer, setCustomer] = useState({
-    FirstName: "",
-    LastName: "",
-    Contact: "",
-    Address: "",
-    
+    firstName: "",
+    lastName: "",
+    contact: "",
+    address: "",
   });
 
   const history = useHistory();
@@ -44,27 +43,27 @@ function AddCustomer() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Emri i Konsumatorit</Form.Label>
               <Form.Control
-                value={customer.FirstName}
+                value={customer.firstName}
                 onChange={handleChange}
-                name="name"
+                name="firstName"
                 type="text"
                 placeholder="Emri Konsumatorit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Mbiemri i Konsumatorit</Form.Label>
+              <Form.Label>Mbiemri i Konsumatorit</Form.Label>
               <Form.Control
-                value={customer.LastName}
+                value={customer.lastName}
                 onChange={handleChange}
-                name="lastname"
+                name="lastName"
                 type="text"
                 placeholder="Mbiemri Konsumatorit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Kontakti</Form.Label>
+              <Form.Label>Kontakti</Form.Label>
               <Form.Control
-                value={customer.Contact}
+                value={customer.contact}
                 onChange={handleChange}
                 name="contact"
                 type="text"
@@ -72,16 +71,16 @@ function AddCustomer() {
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Kontakti</Form.Label>
+              <Form.Label>Kontakti</Form.Label>
               <Form.Control
-                value={customer.Address}
+                value={customer.address}
                 onChange={handleChange}
-                name="adress"
+                name="address"
                 type="text"
                 placeholder="Adresa Konsumatorit"
               />
             </Form.Group>
-           
+
             <Button variant="primary" onClick={addCustomer}>
               Shto Konsumatorin
             </Button>

@@ -45,7 +45,7 @@ function EditCustomer() {
           ...customer,
         }
       );
-      history.push("/costumer");
+      history.push("/customers");
     } catch (err) {
       alert("Something went wrong while trying to edit this customer");
     }
@@ -60,9 +60,9 @@ function EditCustomer() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Emri i Konsumatorit</Form.Label>
               <Form.Control
-                value={customer.FirstName}
+                value={customer.firstName}
                 onChange={handleChange}
-                name="name"
+                name="firstName"
                 type="text"
                 placeholder="Emri Konsumtaorit"
               />
@@ -70,27 +70,17 @@ function EditCustomer() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Mbiemri i Konsumatorit</Form.Label>
               <Form.Control
-                value={customer.LastName}
+                value={customer.lastName}
                 onChange={handleChange}
-                name="lasntname"
+                name="lastName"
                 type="text"
                 placeholder="Mbiemri Konsumtaorit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Mbiemri i Konsumatorit</Form.Label>
+              <Form.Label>Kontakti</Form.Label>
               <Form.Control
-                value={customer.LastName}
-                onChange={handleChange}
-                name="lasntname"
-                type="text"
-                placeholder="Mbiemri Konsumtaorit"
-              />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Kontakti</Form.Label>
-              <Form.Control
-                value={customer.Contact}
+                value={customer.contact}
                 onChange={handleChange}
                 name="contact"
                 type="text"
@@ -98,11 +88,11 @@ function EditCustomer() {
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Kontakti</Form.Label>
+              <Form.Label>Kontakti</Form.Label>
               <Form.Control
-                value={customer.Address}
+                value={customer.address}
                 onChange={handleChange}
-                name="adress"
+                name="address"
                 type="text"
                 placeholder="Adresa Konsumatorit"
               />

@@ -47,13 +47,12 @@ function CustomersList() {
 
   return (
     <>
-    
       <Navbar />
-             <Link to="/Customer/AddCustomers.js">
-              <Button class="bttn1" variant="secondary" type="submit">
-                Shto Konsumatorin
-              </Button>
-            </Link>
+      <Link to="/customers/regjistro">
+        <Button class="bttn1" variant="secondary" type="submit">
+          Shto Konsumatorin
+        </Button>
+      </Link>
       {customers && (
         <div style={{ padding: "50px" }}>
           <Table striped bordered hover>
@@ -63,20 +62,19 @@ function CustomersList() {
                 <th>Last Name</th>
                 <th>Contact</th>
                 <th>Address</th>
-                
               </tr>
             </thead>
             <tbody>
               {customers.map((customer) => (
                 <tr>
-                  <td>{customer.FirstName}</td>
-                  <td>{customer.LastName}</td>
-                  <td>{customer.Contact}</td>
-                  <td>{customer.Address}</td>
-                  
+                  <td>{customer.firstName}</td>
+                  <td>{customer.lastName}</td>
+                  <td>{customer.contact}</td>
+                  <td>{customer.address}</td>
+
                   <td>
                     <div style={{ display: "flex" }}>
-                      <Link to={`/costumers/ndrysho/${customer.id}`}>
+                      <Link to={`/customers/ndrysho/${customer.id}`}>
                         <Button
                           style={{ marginRight: "5px" }}
                           variant="primary"

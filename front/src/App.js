@@ -15,7 +15,6 @@ import AddSupplier from "./Suppliers/AddSupplier";
 import SupplierDetails from "./Suppliers/SupplierDetails";
 import EditSupplier from "./Suppliers/EditSupplier";
 
-
 import CategoriesList from "./Kategorite/CategoriesList";
 import CategoriesDetails from "./Kategorite/CategoriesDetails";
 import AddCategories from "./Kategorite/AddCategories";
@@ -37,7 +36,6 @@ function App() {
           </Route>
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          
 
           <Route exact path="/products" component={ProductsList} />
           <Route exact path="/produktet/regjistro" component={AddProduct} />
@@ -52,17 +50,24 @@ function App() {
             path="/furnitoret/ndrysho/:id"
             component={EditSupplier}
           />
-              
+
           <Route exact path="/customers" component={CustomerList} />
-          <Route exact path="/customers/regjistro" component={CustomerDetails} />
-          <Route exact path="/customers/:id" component={AddCustomer} />
+          <Route exact path="/customers/regjistro" component={AddCustomer} />
+          <Route exact path="/customers/:id" component={CustomerDetails} />
           <Route exact path="/customers/ndrysho/:id" component={EditCustomer} />
 
-
           <Route exact path="/kategorite" component={CategoriesList} />
-          <Route exact path="/kategorite/regjistro" component={CategoriesDetails} />
+          <Route
+            exact
+            path="/kategorite/regjistro"
+            component={CategoriesDetails}
+          />
           <Route exact path="/kategorite/:id" component={AddCategories} />
-          <Route exact path="/kategorite/ndrysho/:id" component={EditCategory} />
+          <Route
+            exact
+            path="/kategorite/ndrysho/:id"
+            component={EditCategory}
+          />
 
           <Route path="/" />
         </Switch>
