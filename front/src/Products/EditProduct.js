@@ -16,7 +16,7 @@ import "./AddProduct.css";
 import axios from "axios";
 
 function EditProduct() {
-  const [product, setProduct] = useState({});
+  const [customer, setProduct] = useState({});
 
   const params = useParams();
   const history = useHistory();
@@ -34,7 +34,7 @@ function EditProduct() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    setProduct({ ...customer, [name]: value });
   };
 
   const editProduct = async () => {
@@ -42,25 +42,25 @@ function EditProduct() {
       const response = await axios.put(
         `http://localhost:5000/api/Product/${params.id}`,
         {
-          ...product,
+          ...customer,
         }
       );
       history.push("/produktet");
     } catch (err) {
-      alert("Something went wrong while trying to edit this product");
+      alert("Something went wrong while trying to edit this customer");
     }
   };
 
   return (
     <>
       <Navbar />
-      {product && (
+      {customer && (
         <div class="forma1">
           <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Emri i Produktit</Form.Label>
               <Form.Control
-                value={product.name}
+                value={customer.name}
                 onChange={handleChange}
                 name="name"
                 type="text"
@@ -71,7 +71,7 @@ function EditProduct() {
               <Form.Label>Kategoria</Form.Label>
               <Form.Control
                 as="select"
-                value={product.categoryId}
+                value={customer.categoryId}
                 onChange={handleChange}
                 name="categoryId"
               >
@@ -86,7 +86,7 @@ function EditProduct() {
               <Form.Label>Nën kategoria</Form.Label>
               <Form.Control
                 as="select"
-                value={product.subCategoryId}
+                value={customer.subCategoryId}
                 onChange={handleChange}
                 name="subCategoryId"
               >
@@ -100,7 +100,7 @@ function EditProduct() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Njesi ne Stock</Form.Label>
               <Form.Control
-                value={product.unitsInStock}
+                value={customer.unitsInStock}
                 onChange={handleChange}
                 name="unitsInStock"
                 type="number"
@@ -110,7 +110,7 @@ function EditProduct() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Qmimi</Form.Label>
               <Form.Control
-                value={product.price}
+                value={customer.price}
                 onChange={handleChange}
                 name="price"
                 type="number"
@@ -120,7 +120,7 @@ function EditProduct() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Zbritje</Form.Label>
               <Form.Control
-                value={product.discount}
+                value={customer.discount}
                 onChange={handleChange}
                 name="discount"
                 type="number"
