@@ -44,7 +44,7 @@ const Login = (props) => {
             <input
               type="email"
               name="email"
-              placeholder="Type your email..."
+              placeholder="Shënoni Email-in..."
               required
               onChange={handleChange}
             />
@@ -53,20 +53,20 @@ const Login = (props) => {
             <input
               type="password"
               name="password"
-              placeholder="Type your password..."
+              placeholder="Shënoni Password-in..."
               required
               onChange={handleChange}
             />
           </div>
           <div class="buttons">
             <div class="button1">
-              <button class="button12"onSubmit={handleSubmit}>Log In</button>
+              <button class="button12"onSubmit={handleSubmit}>Kyquni</button>
             </div>
           </div>
         </form>
         <div class="buttons ">
           <Link to="/register">
-            <button class="button12"> Register </button>
+            <button class="button12"> Regjistrohu </button>
           </Link>
         </div>
       </div>

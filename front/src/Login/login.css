@@ -7,19 +7,22 @@
   border-radius: 20px;
   color: #dbdbdb;
   top: 50%;
-  left: 50%;
+  left: 45%;
   margin: -180px 0 0 -220px;
 }
 .idjaMiresevini {
   color: rgb(44, 197, 44);
-  position: relative;
+  position: absolute;
   font-size: 30px;
+  top: 10%;
+  left: 37%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial;
 }
 .idja2Miresevini {
   color: rgb(44, 197, 44);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial;
-  font-size: 12px;
+  font-size: 15px;
+  margin-left:30px;
 }
 .div-login-logo {
   height: 50px;
@@ -31,16 +34,18 @@
   width: 200px;
   align-items: center;
   border-radius: 5px;
+  margin-left: 50px;
 }
 .password {
   padding-bottom: 15px;
   width: 200px;
+  margin-left: 50px;
 }
 .buttons {
   padding-left: 20%;
 }
 .button12 {
-  width: 70%;
+  width: 50%;
   margin: 5px 0;
   background-color: #90ee90;
   font-family: "Open Sans Condensed", sans-serif;
@@ -49,6 +54,7 @@
   border: none;
   color: green;
   border-radius: 100px;
+  margin-left: 40px;
 }
 
 ::placeholder {

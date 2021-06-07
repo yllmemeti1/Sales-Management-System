@@ -41,14 +41,14 @@
   
   .form-content-right {
     position: absolute;
-    width: 10%;
-    height: 60%;
+    width: 40%;
+    height: 100%;
    
     padding: 100px 100px 100px;
     background:rgba(0,0,0,0.7);
     border-radius: 20px;
     color:#dbdbdb;
-    top: 50%;
+    top: 29%;
     left: 50%;
     margin: -180px 0 0 -220px;
   }
@@ -77,10 +77,10 @@
    
   }
   .form {
-    position: absolute;
+    position: relative;
     border-radius: 15px;
     top: 50%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     width: 90%;
     height: 100%;
@@ -95,6 +95,7 @@
     color:rgb(44, 197, 44);
     position:relative;
     font-size: 13px;
+    margin-left:20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial,;
   }
   /*Filloni.. change*/
@@ -108,7 +109,7 @@
   
   .form-inputs p {
     font-size: 0.6rem;
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     color: #f00e0e;
   }
   /*Error me tkuqe*/
@@ -149,6 +150,7 @@
     border: none;
     color: green;
     border-radius: 100px;
+    margin-right:20px;
   }
   /*Kyquni*/
   .form-input-btn:hover {
@@ -165,8 +167,9 @@
     font-size: 0.8rem;
     margin-top: 10px;
     color: #fff;
-    width: 80%;
+    width: 60%;
     text-align: center;
+    margin-right:25px;
   }
   /*posedoni*/
   
@@ -174,5 +177,6 @@
     text-decoration: none;
     color: #27cdff;
     font-weight: 600;
+    
   }
   /*Ketu*/
