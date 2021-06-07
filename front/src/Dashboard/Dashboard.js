@@ -48,6 +48,7 @@ function Dashboard() {
               </Link>
             </div>
           </Col>
+          
           <Col>
             <div class="box1">
               <Link to="/dashboard">
@@ -56,6 +57,7 @@ function Dashboard() {
               </Link>
             </div>
           </Col>
+
           <Col>
             <div class="box1">
               <Link to="/dashboard">
@@ -64,6 +66,7 @@ function Dashboard() {
               </Link>
             </div>
           </Col>
+
         </Row>
       </Container>
     </>
