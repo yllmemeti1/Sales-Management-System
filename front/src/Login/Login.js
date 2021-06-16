@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./login.css";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
+import { AiOutlineBgColors } from "react-icons/ai";
+
 
 const Login = (props) => {
   const [input, setInput] = useState({});
@@ -12,9 +14,6 @@ const Login = (props) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
-  <script>
-    document.write("hello");
-  </script>
 
   const handleSubmit = async (e) => {
     e.preventDefault();
