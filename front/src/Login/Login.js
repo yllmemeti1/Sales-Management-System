@@ -12,6 +12,9 @@ const Login = (props) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
+  <script>
+    document.write("hello");
+  </script>
 
   const handleSubmit = async (e) => {
     e.preventDefault();
