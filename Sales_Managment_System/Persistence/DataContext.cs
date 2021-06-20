@@ -17,14 +17,14 @@ namespace Sales_Managment_System.Persistence
         public DbSet<ProductUnit> ProductUnit { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Sale> Sales { get; set; }
-        public DbSet<SubCategory> SubCategories { get; set; }
+      
         public DbSet<Supplier> Suppliers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<Product>().HasOne(p => p.SubCategory).WithMany(s => s.Products).OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<Product>().HasOne(p => p.Category).WithMany(s => s.Products).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

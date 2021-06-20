@@ -14,7 +14,7 @@ function ProductsList() {
 
   useEffect(async () => {
     const getProducts = async () => {
-      const response = await axios.get("http://localhost:5000/api/Product");
+      const response = await axios.get("http://localhost:63717/api/Product");
       setProducts(response.data);
     };
 
@@ -29,7 +29,7 @@ function ProductsList() {
     if (productToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/Product/${productToDeleteId}`
+          `http://localhost:63717/api/Product/${productToDeleteId}`
         );
 
         setProducts(products.filter((p) => p.id !== productToDeleteId));
@@ -55,7 +55,7 @@ function ProductsList() {
               <tr>
                 <th>Name</th>
                 <th>Category</th>
-                <th>SubCategory</th>
+             
                 <th>Stock</th>
                 <th>Price</th>
                 <th>Date</th>
@@ -67,7 +67,7 @@ function ProductsList() {
                 <tr>
                   <td>{product.name}</td>
                   <td>{product.category.name}</td>
-                  <td>{product.subCategory.name}</td>
+                 
                   <td>{product.unitsInStock}</td>
                   <td>{product.price}</td>
                   <td>{product.insertedAt}</td>

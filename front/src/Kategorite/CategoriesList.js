@@ -15,7 +15,7 @@ function CategoriesList() {
 
   useEffect(async () => {
     const getCategories = async () => {
-      const response = await axios.get("http://localhost:5000/api/Category");
+      const response = await axios.get("http://localhost:63717/api/category");
       setCategories(response.data);
     };
 
@@ -30,7 +30,7 @@ function CategoriesList() {
     if (categoryToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/Category/${categoryToDeleteId}`
+          `http://localhost:63717/api/category/${categoryToDeleteId}`
         );
 
         setCategories(categories.filter((c) => c.id !== categoryToDeleteId));

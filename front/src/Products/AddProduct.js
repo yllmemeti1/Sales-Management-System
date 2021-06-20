@@ -10,7 +10,6 @@ function AddProduct() {
   const [product, setProduct] = useState({
     name: "",
     categoryId: "1",
-    subCategoryId: "1",
     unitsInStock: "",
     price: "",
     discount: "",
@@ -21,7 +20,7 @@ function AddProduct() {
   const addProduct = async () => {
     console.log("Product to add", product);
     try {
-      const response = await axios.post("http://localhost:5000/api/Product", {
+      const response = await axios.post("http://localhost:63717/api/Product", {
         ...product,
       });
 
@@ -67,21 +66,7 @@ function AddProduct() {
                 <option>5</option>
               </Form.Control>
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Nën kategoria</Form.Label>
-              <Form.Control
-                as="select"
-                value={product.subCategoryId}
-                onChange={handleChange}
-                name="subCategoryId"
-              >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Form.Control>
-            </Form.Group>
+            
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Njesi ne Stock</Form.Label>
               <Form.Control

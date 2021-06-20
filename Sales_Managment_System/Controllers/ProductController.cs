@@ -23,7 +23,7 @@ namespace Sales_Managment_System.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
-            return Ok(await _context.Products.Include(p => p.Category).Include(p => p.SubCategory).ToListAsync());
+            return Ok(await _context.Products.Include(p => p.Category).ToListAsync());
         }
 
         [HttpGet("{productId}")]
@@ -45,7 +45,7 @@ namespace Sales_Managment_System.Controllers
             {
                 Name = productDto.Name,
                 CategoryId = productDto.CategoryId,
-                SubCategoryId = productDto.SubCategoryId,
+                
                 UnitsInStock = productDto.UnitsInStock,
                 Price = productDto.Price,
                 Discount = productDto.Discount,
@@ -70,7 +70,7 @@ namespace Sales_Managment_System.Controllers
 
             product.Name = productDto.Name;
             product.CategoryId = productDto.CategoryId;
-            product.SubCategoryId = productDto.SubCategoryId;
+           
             product.UnitsInStock = productDto.UnitsInStock;
             product.Price = productDto.Price;
             product.Discount = productDto.Discount;
