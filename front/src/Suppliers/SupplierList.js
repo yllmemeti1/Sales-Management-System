@@ -14,7 +14,7 @@ function SuppliersList() {
 
   useEffect(async () => {
     const getSuppliers = async () => {
-      const response = await axios.get("http://localhost:5000/api/supplier");
+      const response = await axios.get("http://localhost:63717/api/supplier");
       setSuppliers(response.data);
     };
 
@@ -25,7 +25,7 @@ function SuppliersList() {
     if (supplierToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/supplier/${supplierToDeleteId}`
+          `http://localhost:63717/api/supplier/${supplierToDeleteId}`
         );
 
         setSuppliers(suppliers.filter((p) => p.id !== supplierToDeleteId));

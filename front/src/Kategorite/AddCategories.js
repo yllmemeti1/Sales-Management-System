@@ -17,11 +17,11 @@ function AddCategories() {
   const addCategory = async () => {
     console.log("Category to add", category);
     try {
-      const response = await axios.post("http://localhost:5000/api/Category", {
+      const response = await axios.post("http://localhost:63717/api/Category", {
         ...category,
       });
 
-      history.push("/dashboard");
+      history.push("/kategorite");
     } catch (err) {
       alert("Something went wrong while trying to add this product");
     }
