@@ -60,7 +60,7 @@ function CategoriesList() {
     <>
 
       <Navbar />
-      <div class="calendar" >
+      {/* <div class="calendar" >
         <div class="calendar1">
           <h2 class="calendarheading">Fillimi</h2>
           <Calendar
@@ -83,7 +83,7 @@ function CategoriesList() {
         <div class="date1">
         {date2.toString()}
         </div>
-      </div>
+      </div> */}
       
       {categories && (
         <div style={{ padding: "10px", backgroundColor: "lightblue", borderColor: "black" }}>

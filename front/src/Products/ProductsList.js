@@ -49,71 +49,77 @@ function ProductsList() {
     <>
       <Navbar />
       {products && (
-        <div style={{ padding: "50px" }}>
+        <div style={{padding: "10px", backgroundColor: "lightblue", borderColor: "black" }}>
           <Table striped bordered hover>
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Category</th>
-             
+
                 <th>Stock</th>
                 <th>Price</th>
                 <th>Date</th>
-                <th>Action</th>
+                <th>
+                  <Link to="/kategorite/AddProducts.js">
+                    <Button class=" btn btn-primary " type="submit">
+                      Shto Produktin
+                    </Button>
+                    </Link>
+          </th>
               </tr>
             </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr>
-                  <td>{product.name}</td>
-                  <td>{product.category.name}</td>
-                 
-                  <td>{product.unitsInStock}</td>
-                  <td>{product.price}</td>
-                  <td>{product.insertedAt}</td>
-                  <td>
-                    <div style={{ display: "flex" }}>
-                      <Link to={`/produktet/ndrysho/${product.id}`}>
+              <tbody style ={{backgroundColor:"#56BAC7"}}>
+                {products.map((product) => (
+                  <tr>
+                    <td>{product.name}</td>
+                    <td>{product.category.name}</td>
+
+                    <td>{product.unitsInStock}</td>
+                    <td>{product.price}</td>
+                    <td>{product.insertedAt}</td>
+                    <td>
+                      <div style={{ display: "flex" }}>
+                        <Link to={`/produktet/ndrysho/${product.id}`}>
+                          <Button
+                            style={{ marginRight: "5px" }}
+                            variant="primary"
+                          >
+                            Ndrysho
+                          </Button>
+                        </Link>
                         <Button
-                          style={{ marginRight: "5px" }}
-                          variant="primary"
+                          onClick={() => handleDeleteDialog(product.id)}
+                          variant="danger"
                         >
-                          Ndrysho
+                          Fshij
                         </Button>
-                      </Link>
-                      <Button
-                        onClick={() => handleDeleteDialog(product.id)}
-                        variant="danger"
-                      >
-                        Fshij
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
           </Table>
         </div>
       )}
 
-      <Modal show={deleteModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Fshij produktin</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          A je i sigurt qe deshiron te fshish kete produkt?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="info" onClick={handleClose}>
-            Mbyll
-          </Button>
-          <Button onClick={deleteProduct} variant="danger">
-            Fshij
-          </Button>
-        </Modal.Footer>
-      </Modal>
+          <Modal show={deleteModal} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Fshij produktin</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              A je i sigurt qe deshiron te fshish kete produkt?
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="info" onClick={handleClose}>
+                Mbyll
+              </Button>
+              <Button onClick={deleteProduct} variant="danger">
+                Fshij
+              </Button>
+            </Modal.Footer>
+          </Modal>
     </>
-  );
+      );
 }
 
-export default ProductsList;
+      export default ProductsList;

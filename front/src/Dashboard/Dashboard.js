@@ -8,18 +8,28 @@ import  { BiBuildingHouse } from "react-icons/bi";
 import {GoListUnordered} from "react-icons/go";
 import {GrDropbox} from "react-icons/gr";
 import {RiFileList3Line} from "react-icons/ri";
+
+
 function Dashboard() {
   return (
     <>
       <Navbar />
       <Container>
+        <div class="dashboardBoxes">
         <Row>
           <Col>
             <div class="box1">
-              <Link to="/dashboard">
+              <Link to="/kategorite">
+              
               <GoListUnordered className="icons"/>
-                <div class="box2">Kategori te listuara</div>
+              <div class="textKategori">ajhjahs</div>
+                <div class="box2">Kategori te listuara
+                
+                </div>
+                
+                
               </Link>
+              
             </div>
           </Col>
           <Col>
@@ -32,14 +42,16 @@ function Dashboard() {
           </Col>
           <Col>
             <div class="box1">
-              <Link to="/produktet">
+              <Link to="/products">
              <GrDropbox className="icons" />
                 <div class="box2">Produkte te regjistuara</div>
               </Link>
             </div>
           </Col>
         </Row>
-        <Row>
+        <div class="secondRowDashboard">
+        <Row >
+
           <Col>
             <div class="box1">
               <Link to="/dashboard">
@@ -66,8 +78,10 @@ function Dashboard() {
               </Link>
             </div>
           </Col>
-
+          
         </Row>
+        </div>
+        </div>
       </Container>
     </>
   );
