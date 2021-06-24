@@ -26,7 +26,7 @@ const useForm = (callback, validate) => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/Account/Register", {
+      await axios.post("http://localhost:63717/api/Account/Register", {
         username: values.username,
         email: values.email,
         password: values.password,

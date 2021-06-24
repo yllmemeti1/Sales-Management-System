@@ -24,7 +24,7 @@ function EditCustomer() {
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/Customer/${params.id}`
+        `http://localhost:63717/api/Customer/${params.id}`
       );
       setCustomer(response.data);
     } catch (err) {
@@ -40,7 +40,7 @@ function EditCustomer() {
   const editCustomer = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/Customer/${params.id}`,
+        `http://localhost:63717/api/Customer/${params.id}`,
         {
           ...customer,
         }

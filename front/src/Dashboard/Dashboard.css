@@ -2,11 +2,27 @@
     height:200px;
     width:200px;
     background-color: white;
-    margin-top: 10px;
-    border-top: 20px solid springgreen;
-    border-radius: 20px;
-    margin-left:40px;
-    margin-bottom:23px;
+    border-radius: 10px;
+   
+    
+   
+    
+}
+.dashboardBoxes{
+    margin-top: 3%;
+    margin-left: 10%;
+}
+.secondRowDashboard{
+    margin-top: 3%;
+}
+.textKategori{
+height: fit-content;
+width: fit-content;
+font-size: large;
+color: black;
+text-align: center;
+
+
 }
 .icons{
     color:springgreen;

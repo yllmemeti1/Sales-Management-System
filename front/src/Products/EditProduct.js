@@ -24,7 +24,7 @@ function EditProduct() {
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/Product/${params.id}`
+        `http://localhost:63717/api/Product/${params.id}`
       );
       setProduct(response.data);
     } catch (err) {
@@ -40,7 +40,7 @@ function EditProduct() {
   const editProduct = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/Product/${params.id}`,
+        `http://localhost:63717/api/Product/${params.id}`,
         {
           ...customer,
         }
@@ -82,21 +82,7 @@ function EditProduct() {
                 <option>5</option>
               </Form.Control>
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Nën kategoria</Form.Label>
-              <Form.Control
-                as="select"
-                value={customer.subCategoryId}
-                onChange={handleChange}
-                name="subCategoryId"
-              >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Form.Control>
-            </Form.Group>
+            
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Njesi ne Stock</Form.Label>
               <Form.Control

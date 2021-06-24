@@ -287,8 +287,7 @@ namespace Sales_Managment_System.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<int>("SubCategoryId")
-                        .HasColumnType("int");
+                    
 
                     b.Property<int>("UnitsInStock")
                         .HasColumnType("int");
@@ -402,25 +401,7 @@ namespace Sales_Managment_System.Migrations
                     b.ToTable("Sales");
                 });
 
-            modelBuilder.Entity("Sales_Managment_System.Common.Entities.SubCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("SubCategories");
-                });
+            
 
             modelBuilder.Entity("Sales_Managment_System.Common.Entities.Supplier", b =>
                 {

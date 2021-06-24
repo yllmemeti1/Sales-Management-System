@@ -14,7 +14,7 @@ function CustomersList() {
 
   useEffect(async () => {
     const getCustomers = async () => {
-      const response = await axios.get("http://localhost:5000/api/Customer");
+      const response = await axios.get("http://localhost:63717/api/Customer");
       setCustomers(response.data);
     };
 
@@ -29,7 +29,7 @@ function CustomersList() {
     if (customerToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/Customer/${customerToDeleteId}`
+          `http://localhost:63717/api/Customer/${customerToDeleteId}`
         );
 
         setCustomers(customers.filter((p) => p.id !== customerToDeleteId));

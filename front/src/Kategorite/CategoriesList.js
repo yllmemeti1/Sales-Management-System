@@ -3,7 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { Table, Button, Modal } from "react-bootstrap";
 import axios from "axios";
-import './CategoriesList.css'
+import './CategoriesList.css';
+import Calendar from 'react-calendar'
 
 function CategoriesList() {
   const [categories, setCategories] = useState([]);
@@ -15,7 +16,7 @@ function CategoriesList() {
 
   useEffect(async () => {
     const getCategories = async () => {
-      const response = await axios.get("http://localhost:5000/api/Category");
+      const response = await axios.get("http://localhost:63717/api/category");
       setCategories(response.data);
     };
 
@@ -30,7 +31,7 @@ function CategoriesList() {
     if (categoryToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/Category/${categoryToDeleteId}`
+          `http://localhost:63717/api/category/${categoryToDeleteId}`
         );
 
         setCategories(categories.filter((c) => c.id !== categoryToDeleteId));
@@ -45,31 +46,67 @@ function CategoriesList() {
     handleShow();
     setCategoryToDeleteId(id);
   };
+  const [date, setDate] = useState(new Date());
+  const onChangeDate1 = date => {
+    setDate(date);
+  }
+  const [date2, setDate2] = useState(new Date());
+  const onChangeDate2 = date2 => {
+    setDate2(date2);
+  }
 
   return (
+
     <>
+
       <Navbar />
-      <Link to="/kategorite/AddCategories.js">
-              <Button class="bttn1" variant="secondary" type="submit">
-                Shto Kategorine
-              </Button>
-            </Link>
+      {/* <div class="calendar" >
+        <div class="calendar1">
+          <h2 class="calendarheading">Fillimi</h2>
+          <Calendar
+            onChange={onChangeDate1}
+            value={date}
+            
+          />
+         
+        </div>
+        <div class="date1">
+          {date.toString()}
+          </div>
+        <div class="calendar2">
+          <h2 class="calendarheading">Mbarimi</h2>
+          <Calendar
+            onChange={onChangeDate2}
+            value={date2}
+          />
+        </div>
+        <div class="date1">
+        {date2.toString()}
+        </div>
+      </div> */}
+      
       {categories && (
-        <div style={{ padding: "50px" }}>
+        <div style={{ padding: "10px", backgroundColor: "lightblue", borderColor: "black" }}>
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>Name</th>
-                
+                <th>Emri Kategorise</th>
+                <th><div class="bttn1">
+        <Link to="/kategorite/AddCategories.js">
+          <Button class=" btn btn-primary " type="submit">
+            Shto Kategorine
+          </Button>
+        </Link>
+      </div></th>
               </tr>
             </thead>
             <tbody>
               {categories.map((category) => (
                 <tr>
                   <td>{category.name}</td>
-                  
+
                   <td>
-                    <div style={{ display: "flex" }}>
+                    <div style={{ display: "flex", borderColor: "black" }}>
                       <Link to={`/categories/ndrysho/${category.id}`}>
                         <Button
                           style={{ marginRight: "5px" }}
@@ -109,6 +146,7 @@ function CategoriesList() {
           </Button>
         </Modal.Footer>
       </Modal>
+      
     </>
   );
 }

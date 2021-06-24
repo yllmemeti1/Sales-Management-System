@@ -2,7 +2,7 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
-
+import  { BiBuildingHouse } from "react-icons/bi";
 export const SidebarData = [
   {
     title: 'Dashboard',
@@ -29,9 +29,9 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Messages',
+    title: 'Furnizuesit',
     path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+    icon: <BiBuildingHouse/>,
     cName: 'nav-text'
   },
   {

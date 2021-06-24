@@ -24,7 +24,7 @@ function EditSupplier() {
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/supplier/${params.id}`
+        `http://localhost:63717/api/supplier/${params.id}`
       );
       setSupplier(response.data);
     } catch (err) {
@@ -40,7 +40,7 @@ function EditSupplier() {
   const editSupplier = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/supplier/${params.id}`,
+        `http://localhost:63717/api/supplier/${params.id}`,
         {
           ...supplier,
         }
