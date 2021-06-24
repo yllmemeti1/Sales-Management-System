@@ -5,7 +5,7 @@ import Register from "./Register/Form";
 import Login from "./Login/Login";
 import PrivateRoute from "./shared/PrivateRoute";
 import Dashboard from "./Dashboard/Dashboard";
-import Calendar from 'react-calendar'
+
 
 import ProductsList from "./Products/ProductsList";
 import ProductDetails from "./Products/ProductDetails";
