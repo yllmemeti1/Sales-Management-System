@@ -1,19 +1,22 @@
 .bttn1{
     margin-left:40% !important;
     
+
 }
-.react-calendar{
-    border: 2px solid black;
-    width: 50%;
-    height: 20%;
+.firstDatePicker{
+    display: flex;
+    margin-left: 20%;
 }
-.calendarheading{
-    padding-left: 20%;
-}
-.calendar{
+.secondDatePicker{
+    margin-top: 5px;
+    margin-left: 20%;
     display: flex;
 }
-.date1{
-   margin-top: 100px;
-    margin-left: -250px;
+
+.dateTitle{
+    margin-left: 20%;
+    font-weight: bold;
+}
+.nga{
+    margin-right: 25px;
 }

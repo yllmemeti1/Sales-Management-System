@@ -3,6 +3,8 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import  { BiBuildingHouse } from "react-icons/bi";
+import {RiFileList3Line} from "react-icons/ri";
+import {GrDropbox} from "react-icons/gr";
 export const SidebarData = [
   {
     title: 'Dashboard',
@@ -17,23 +19,24 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Products',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'Costumer',
-    path: '/customers',
-    icon: <IoIcons.IoMdPeople />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Furnizuesit',
     path: '/messages',
     icon: <BiBuildingHouse/>,
     cName: 'nav-text'
   },
+  {
+    title: 'Produktet',
+    path: '/products',
+    icon: <GrDropbox/>,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Shitjet',
+    path: '/customers',
+    icon: <RiFileList3Line/>,
+    cName: 'nav-text'
+  },
+
   {
     title: 'Support',
     path: '/support',

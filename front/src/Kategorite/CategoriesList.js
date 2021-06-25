@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Table, Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import './CategoriesList.css';
+import DatePicker from 'react-date-picker';
 import Calendar from 'react-calendar'
 
 function CategoriesList() {
@@ -47,13 +48,15 @@ function CategoriesList() {
     setCategoryToDeleteId(id);
   };
   const [date, setDate] = useState(new Date());
-  const onChangeDate1 = date => {
-    setDate(date);
-  }
-  const [date2, setDate2] = useState(new Date());
-  const onChangeDate2 = date2 => {
-    setDate2(date2);
-  }
+
+  // const [date, setDate] = useState(new Date());
+  // const onChangeDate1 = date => {
+  //   setDate(date);
+  // }
+  // const [date2, setDate2] = useState(new Date());
+  // const onChangeDate2 = date2 => {
+  //   setDate2(date2);
+  // }
 
   return (
 
@@ -84,7 +87,23 @@ function CategoriesList() {
         {date2.toString()}
         </div>
       </div> */}
-      
+      <div class="dateTitle">
+        Filtro në bazë të datës
+      </div>
+       <div class="firstDatePicker">
+         <div class="nga">Nga:</div>
+      <DatePicker
+        onChange={setDate}
+        value={date}
+      />
+      </div>
+      <div class="secondDatePicker">
+        Deri më:  
+      <DatePicker
+        onChange={setDate}
+        value={date}
+      />
+    </div>
       {categories && (
         <div style={{ padding: "10px", backgroundColor: "lightblue", borderColor: "black" }}>
           <Table striped bordered hover>

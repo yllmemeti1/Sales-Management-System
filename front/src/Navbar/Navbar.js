@@ -24,17 +24,13 @@ function Dashboard() {
             <input
               class="form-control mr-sm-2"
               type="search"
-              placeholder="Kerko..."
+              placeholder="Kerko Produktin..."
               aria-label="Search"
             />
             <Button variant="primary" type="submit">
               Kerko
             </Button>
-            <Link to="/produktet/regjistro">
-              <Button variant="secondary" type="submit">
-                Shto Produktin
-              </Button>
-            </Link>
+            
           </form>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
