@@ -20,7 +20,7 @@ export const SidebarData = [
   },
   {
     title: 'Furnizuesit',
-    path: '/messages',
+    path: '/furnitoret',
     icon: <BiBuildingHouse/>,
     cName: 'nav-text'
   },
@@ -32,7 +32,7 @@ export const SidebarData = [
   },
   {
     title: 'Shitjet',
-    path: '/customers',
+    path: '/sales',
     icon: <RiFileList3Line/>,
     cName: 'nav-text'
   },
