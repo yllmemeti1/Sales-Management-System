@@ -24,7 +24,7 @@ function CategoriesList() {
     try {
       await getCategories();
     } catch (err) {
-      alert("Something went wrong while trying to add this category");
+      alert("Something went wrong while trying to get categories");
     }
   }, []);
 
@@ -47,7 +47,28 @@ function CategoriesList() {
     handleShow();
     setCategoryToDeleteId(id);
   };
-  const [date, setDate] = useState(new Date());
+
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  const filterCategoriesByDate = async () => {
+    console.log("Start", startDate.toISOString());
+    console.log("End", endDate.toISOString());
+
+    const getCategories = async () => {
+      const response = await axios.get(
+        `http://localhost:5000/api/category?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`
+      );
+      console.log(response);
+      setCategories(response.data);
+    };
+
+    try {
+      await getCategories();
+    } catch (err) {
+      alert("Something went wrong while trying to add this category");
+    }
+  };
 
   // const [date, setDate] = useState(new Date());
   // const onChangeDate1 = date => {
@@ -85,14 +106,19 @@ function CategoriesList() {
         {date2.toString()}
         </div>
       </div> */}
-      <div class="dateTitle">Filtro në bazë të datës</div>
-      <div class="firstDatePicker">
-        <div class="nga">Nga:</div>
-        <DatePicker onChange={setDate} value={date} />
-      </div>
-      <div class="secondDatePicker">
-        Deri më:
-        <DatePicker onChange={setDate} value={date} />
+      <div style={{ marginBottom: "30px" }}>
+        <div class="dateTitle">Filtro në bazë të datës</div>
+        <div class="firstDatePicker">
+          <div class="nga">Nga:</div>
+          <DatePicker onChange={setStartDate} value={startDate} />
+        </div>
+        <div class="secondDatePicker">
+          Deri më:
+          <DatePicker onChange={setEndDate} value={endDate} />
+        </div>
+        <Button variant="primary" onClick={filterCategoriesByDate}>
+          Filtro
+        </Button>
       </div>
       {categories && (
         <div

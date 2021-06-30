@@ -60,18 +60,14 @@ const Login = (props) => {
             />
           </div>
           <div class="buttons">
-            <div class="button1">
-              <button class="button12" onSubmit={handleSubmit}>
-                Kyquni
-              </button>
-            </div>
+            <Link to="/register">
+              <button class="registerButton"> Regjistrohu </button>
+            </Link>
+            <button class="loginButton" onSubmit={handleSubmit}>
+              Kyquni
+            </button>
           </div>
         </form>
-        <div class="buttons ">
-          <Link to="/register">
-            <button class="button12"> Regjistrohu </button>
-          </Link>
-        </div>
       </div>
     </div>
   );

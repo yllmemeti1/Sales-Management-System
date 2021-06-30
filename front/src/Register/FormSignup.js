@@ -14,8 +14,7 @@ const FormSignup = ({ submitForm }) => {
     <div className="form-content-right">
       <form onSubmit={handleSubmit} className="form" noValidate>
         <h1>
-          Filloni me ne sot! Krijoni llogarinë tuaj duke plotësuar informacionet
-          më poshtë.
+          Filloni me ne sot! Krijoni llogarinë tuaj!
         </h1>
         <div className="form-inputs">
           <label className="form-label">Emri dhe Mbiemri</label>
@@ -84,9 +83,9 @@ const FormSignup = ({ submitForm }) => {
           Regjistrohu
         </button>
         <span className="form-input-login">
-          Posedoni një llogari? Kyquni{" "}
+          Posedoni një llogari?{" "}
           <Link to="/login">
-            <p>këtu</p>
+            <p>Kyquni këtu</p>
           </Link>
         </span>
       </form>
