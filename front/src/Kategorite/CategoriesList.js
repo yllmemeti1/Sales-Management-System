@@ -90,33 +90,33 @@ function CategoriesList() {
       <div class="dateTitle">
         Filtro në bazë të datës
       </div>
-       <div class="firstDatePicker">
-         <div class="nga">Nga:</div>
-      <DatePicker
-        onChange={setDate}
-        value={date}
-      />
+      <div class="firstDatePicker">
+        <div class="nga">Nga:</div>
+        <DatePicker
+          onChange={setDate}
+          value={date}
+        />
       </div>
       <div class="secondDatePicker">
-        Deri më:  
-      <DatePicker
-        onChange={setDate}
-        value={date}
-      />
-    </div>
+        Deri më:
+        <DatePicker
+          onChange={setDate}
+          value={date}
+        />
+      </div>
       {categories && (
         <div style={{ padding: "10px", backgroundColor: "lightblue", borderColor: "black" }}>
-          <Table striped bordered hover>
+          <Table striped bordered hover responsive>
             <thead>
               <tr>
                 <th>Emri Kategorise</th>
                 <th><div class="bttn1">
-        <Link to="/kategorite/AddCategories.js">
-          <Button class=" btn btn-primary " type="submit">
-            Shto Kategorine
-          </Button>
-        </Link>
-      </div></th>
+                  <Link to="/kategorite/AddCategories.js">
+                    <Button class=" btn btn-primary " type="submit">
+                      Shto Kategorine
+                    </Button>
+                  </Link>
+                </div></th>
               </tr>
             </thead>
             <tbody>
@@ -165,7 +165,7 @@ function CategoriesList() {
           </Button>
         </Modal.Footer>
       </Modal>
-      
+
     </>
   );
 }
