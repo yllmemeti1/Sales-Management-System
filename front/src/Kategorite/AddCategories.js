@@ -9,7 +9,6 @@ import axios from "axios";
 function AddCategories() {
   const [category, setCategory] = useState({
     name: "",
-    
   });
 
   const history = useHistory();
@@ -17,7 +16,7 @@ function AddCategories() {
   const addCategory = async () => {
     console.log("Category to add", category);
     try {
-      const response = await axios.post("http://localhost:63717/api/Category", {
+      const response = await axios.post("http://localhost:5000/api/Category", {
         ...category,
       });
 
@@ -48,7 +47,7 @@ function AddCategories() {
                 placeholder="Emri Kategories"
               />
             </Form.Group>
-            
+
             <Button variant="primary" onClick={addCategory}>
               Shto Kategorine
             </Button>

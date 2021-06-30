@@ -18,7 +18,7 @@ function AddSupplier() {
 
   const addSupplier = async () => {
     try {
-      const response = await axios.post("http://localhost:63717/api/supplier", {
+      const response = await axios.post("http://localhost:5000/api/supplier", {
         ...supplier,
       });
 

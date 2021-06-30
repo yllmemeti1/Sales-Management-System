@@ -24,7 +24,7 @@ function EditSale() {
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:63717/api/sale/${params.id}`
+        `http://localhost:5000/api/sale/${params.id}`
       );
       setSale(response.data);
     } catch (err) {
@@ -40,7 +40,7 @@ function EditSale() {
   const editSale = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:63717/api/sale/${params.id}`,
+        `http://localhost:5000/api/sale/${params.id}`,
         {
           ...sale,
         }
@@ -57,7 +57,7 @@ function EditSale() {
       {sale && (
         <div class="forma1">
           <Form>
-          <Form.Group controlId="exampleForm.ControlInput1">
+            <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>ID e fatures</Form.Label>
               <Form.Control
                 value={sale.InvoiceId}

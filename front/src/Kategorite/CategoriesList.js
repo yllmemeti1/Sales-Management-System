@@ -3,9 +3,9 @@ import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { Table, Button, Modal } from "react-bootstrap";
 import axios from "axios";
-import './CategoriesList.css';
-import DatePicker from 'react-date-picker';
-import Calendar from 'react-calendar'
+import "./CategoriesList.css";
+import DatePicker from "react-date-picker";
+import Calendar from "react-calendar";
 
 function CategoriesList() {
   const [categories, setCategories] = useState([]);
@@ -17,7 +17,7 @@ function CategoriesList() {
 
   useEffect(async () => {
     const getCategories = async () => {
-      const response = await axios.get("http://localhost:63717/api/category");
+      const response = await axios.get("http://localhost:5000/api/category");
       setCategories(response.data);
     };
 
@@ -32,7 +32,7 @@ function CategoriesList() {
     if (categoryToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:63717/api/category/${categoryToDeleteId}`
+          `http://localhost:5000/api/category/${categoryToDeleteId}`
         );
 
         setCategories(categories.filter((c) => c.id !== categoryToDeleteId));
@@ -59,9 +59,7 @@ function CategoriesList() {
   // }
 
   return (
-
     <>
-
       <Navbar />
       {/* <div class="calendar" >
         <div class="calendar1">
@@ -87,36 +85,36 @@ function CategoriesList() {
         {date2.toString()}
         </div>
       </div> */}
-      <div class="dateTitle">
-        Filtro në bazë të datës
-      </div>
+      <div class="dateTitle">Filtro në bazë të datës</div>
       <div class="firstDatePicker">
         <div class="nga">Nga:</div>
-        <DatePicker
-          onChange={setDate}
-          value={date}
-        />
+        <DatePicker onChange={setDate} value={date} />
       </div>
       <div class="secondDatePicker">
         Deri më:
-        <DatePicker
-          onChange={setDate}
-          value={date}
-        />
+        <DatePicker onChange={setDate} value={date} />
       </div>
       {categories && (
-        <div style={{ padding: "10px", backgroundColor: "lightblue", borderColor: "black" }}>
+        <div
+          style={{
+            padding: "10px",
+            backgroundColor: "lightblue",
+            borderColor: "black",
+          }}
+        >
           <Table striped bordered hover responsive>
             <thead>
               <tr>
                 <th>Emri Kategorise</th>
-                <th><div class="bttn1">
-                  <Link to="/kategorite/AddCategories.js">
-                    <Button class=" btn btn-primary " type="submit">
-                      Shto Kategorine
-                    </Button>
-                  </Link>
-                </div></th>
+                <th>
+                  <div class="bttn1">
+                    <Link to="/kategorite/AddCategories.js">
+                      <Button class=" btn btn-primary " type="submit">
+                        Shto Kategorine
+                      </Button>
+                    </Link>
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -165,7 +163,6 @@ function CategoriesList() {
           </Button>
         </Modal.Footer>
       </Modal>
-
     </>
   );
 }

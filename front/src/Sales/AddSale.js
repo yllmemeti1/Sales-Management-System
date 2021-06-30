@@ -18,7 +18,7 @@ function AddSale() {
 
   const addSale = async () => {
     try {
-      const response = await axios.post("http://localhost:63717/api/sale", {
+      const response = await axios.post("http://localhost:5000/api/sale", {
         ...sale,
       });
 

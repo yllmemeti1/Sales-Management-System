@@ -14,7 +14,7 @@ function SalesList() {
 
   useEffect(async () => {
     const getSales = async () => {
-      const response = await axios.get("http://localhost:63717/api/sale");
+      const response = await axios.get("http://localhost:5000/api/sale");
       setSales(response.data);
     };
 
@@ -24,9 +24,7 @@ function SalesList() {
   const deleteSale = async () => {
     if (saleToDeleteId) {
       try {
-        await axios.delete(
-          `http://localhost:63717/api/sale/${saleToDeleteId}`
-        );
+        await axios.delete(`http://localhost:5000/api/sale/${saleToDeleteId}`);
 
         setSales(sales.filter((p) => p.id !== saleToDeleteId));
         handleClose();
@@ -45,10 +43,10 @@ function SalesList() {
     <>
       <Navbar />
       <Link to="/sales/regjistro">
-          <Button class=" btn btn-primary " type="submit">
-            Shto Shitje
-          </Button>
-        </Link>
+        <Button class=" btn btn-primary " type="submit">
+          Shto Shitje
+        </Button>
+      </Link>
       {sales && (
         <div style={{ padding: "50px" }}>
           <Table striped bordered hover>

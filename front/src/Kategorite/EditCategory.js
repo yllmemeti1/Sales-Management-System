@@ -24,7 +24,7 @@ function EditCategory() {
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:63717/api/category/${params.id}`
+        `http://localhost:5000/api/category/${params.id}`
       );
       setCategory(response.data);
     } catch (err) {
@@ -40,7 +40,7 @@ function EditCategory() {
   const editCategory = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:63717/api/category/${params.id}`,
+        `http://localhost:5000/api/category/${params.id}`,
         {
           ...category,
         }
@@ -67,7 +67,7 @@ function EditCategory() {
                 placeholder="Emri Produktit"
               />
             </Form.Group>
-            
+
             <Button variant="primary" onClick={editCategory}>
               Ndrysho Kategorine
             </Button>
