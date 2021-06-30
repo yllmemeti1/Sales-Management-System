@@ -38,7 +38,7 @@ function AddCategories() {
         <Navbar />
         <div class="forma1">
           <Form>
-            <Form.Group controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Emri i Kategories</Form.Label>
               <Form.Control
                 value={category.name}
