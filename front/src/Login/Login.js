@@ -4,7 +4,6 @@ import { Link, Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AiOutlineBgColors } from "react-icons/ai";
 
-
 const Login = (props) => {
   const [input, setInput] = useState({});
 
@@ -19,7 +18,7 @@ const Login = (props) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:63717/api/Account/Login", {
+      const res = await axios.post("http://localhost:5000/api/Account/Login", {
         ...input,
       });
 
@@ -61,16 +60,14 @@ const Login = (props) => {
             />
           </div>
           <div class="buttons">
-            <div class="button1">
-              <button class="button12"onSubmit={handleSubmit}>Kyquni</button>
-            </div>
+            <Link to="/register">
+              <button class="registerButton"> Regjistrohu </button>
+            </Link>
+            <button class="loginButton" onSubmit={handleSubmit}>
+              Kyquni
+            </button>
           </div>
         </form>
-        <div class="buttons ">
-          <Link to="/register">
-            <button class="button12"> Regjistrohu </button>
-          </Link>
-        </div>
       </div>
     </div>
   );

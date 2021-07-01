@@ -26,6 +26,7 @@
   
   .nav-menu.active {
     left: 0;
+    width: 220px;
     transition: 350ms;
   }
   
@@ -58,6 +59,8 @@
   
   .nav-menu-items {
     width: 100%;
+    padding-left: 0%;
+    
   }
   
   .navbar-toggle {

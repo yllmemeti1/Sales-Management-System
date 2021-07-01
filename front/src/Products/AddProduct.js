@@ -1,5 +1,5 @@
 import Navbar from "../Navbar/Navbar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
@@ -9,18 +9,31 @@ import axios from "axios";
 function AddProduct() {
   const [product, setProduct] = useState({
     name: "",
-    categoryId: "1",
+    categoryId: 0,
     unitsInStock: "",
     price: "",
     discount: "",
   });
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    async function getProduct() {
+      const response = await axios.get("http://localhost:5000/api/Category");
+      setCategories(response.data);
+      console.log(response.data);
+    }
+    try {
+      getProduct();
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const history = useHistory();
 
   const addProduct = async () => {
-    console.log("Product to add", product);
     try {
-      const response = await axios.post("http://localhost:63717/api/Product", {
+      const response = await axios.post("http://localhost:5000/api/Product", {
         ...product,
       });
 
@@ -59,14 +72,14 @@ function AddProduct() {
                 onChange={handleChange}
                 name="categoryId"
               >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option value={0}>Zgjedhni kategorine</option>
+                {categories &&
+                  categories.map((category) => (
+                    <option value={category.id}>{category.name}</option>
+                  ))}
               </Form.Control>
             </Form.Group>
-            
+
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Njesi ne Stock</Form.Label>
               <Form.Control

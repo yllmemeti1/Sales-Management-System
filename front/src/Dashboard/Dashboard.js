@@ -1,86 +1,100 @@
 import "./Dashboard.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "reactstrap";
-import  { BiBuildingHouse } from "react-icons/bi";
-import {GoListUnordered} from "react-icons/go";
-import {GrDropbox} from "react-icons/gr";
-import {RiFileList3Line} from "react-icons/ri";
-
+import { BiBuildingHouse } from "react-icons/bi";
+import { GoListUnordered } from "react-icons/go";
+import { GrDropbox } from "react-icons/gr";
+import { RiFileList3Line } from "react-icons/ri";
+import axios from "axios";
 
 function Dashboard() {
+  const [dashboard, setDashboard] = useState([]);
+
+  useEffect(async () => {
+    const getDashboard = async () => {
+      const response = await axios.get("http://localhost:5000/api/dashboard");
+      console.log("Dashboard", response.data);
+      setDashboard(response.data);
+    };
+
+    try {
+      await getDashboard();
+    } catch (err) {
+      alert("Something went wrong while trying to get dashboard info");
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
       <Container>
         <div class="dashboardBoxes">
-        <Row>
-          <Col>
-            <div class="box1">
-              <Link to="/kategorite">
-              
-              <GoListUnordered className="icons"/>
-              <div class="textKategori">ajhjahs</div>
-                <div class="box2">Kategori te listuara
-                
+          <Row>
+            <Col>
+              <Link to="/kategorite" style={{ textDecoration: "none" }}>
+                <div class="box1">
+                  <GoListUnordered className="icons" />
+                  <div class="boxNr">{dashboard.categoriesCount}</div>
+                  <div class="boxText">Kategori te listuara</div>
                 </div>
-                
-                
               </Link>
-              
-            </div>
-          </Col>
-          <Col>
-            <div class="box1">
-              <Link to="/furnitoret">
-              <BiBuildingHouse className="icons" />
-                <div class="box2">Furnitor te listuar</div>
+            </Col>
+            <Col>
+              <Link to="/furnitoret" style={{ textDecoration: "none" }}>
+                <div class="box1">
+                  <BiBuildingHouse className="icons" />
+                  <div class="boxNr">{dashboard.suppliersCount}</div>
+                  <div class="boxText">Furnitor te listuar</div>
+                </div>
               </Link>
-            </div>
-          </Col>
-          <Col>
-            <div class="box1">
-              <Link to="/products">
-             <GrDropbox className="icons" />
-                <div class="box2">Produkte te regjistuara</div>
+            </Col>
+            <Col>
+              <Link to="/products" style={{ textDecoration: "none" }}>
+                <div class="box1">
+                  <GrDropbox className="icons" />
+                  <div class="boxNr">{dashboard.productsCount}</div>
+                  <div class="boxText">Produkte te regjistuara</div>
+                </div>
               </Link>
-            </div>
-          </Col>
-        </Row>
-        <div class="secondRowDashboard">
-        <Row >
+            </Col>
+          </Row>
 
-          <Col>
-            <div class="box1">
-              <Link to="/dashboard">
-                <RiFileList3Line className="icons"/>
-                <div class="box2">Shitje Totale</div>
-              </Link>
-            </div>
-          </Col>
-          
-          <Col>
-            <div class="box1">
-              <Link to="/dashboard">
-                <RiFileList3Line  className="icons"/>
-                <div class="box2">Shitje Ditore</div>
-              </Link>
-            </div>
-          </Col>
+          <div class="secondRowDashboard">
+            <Row>
+              <Col>
+                <Link to="/dashboard" style={{ textDecoration: "none" }}>
+                  <div class="box1">
+                    <RiFileList3Line className="icons" />
+                    <div class="boxNr">{dashboard.totalSales}</div>
+                    <div class="boxText">Shitje Totale</div>
+                  </div>
+                </Link>
+              </Col>
 
-          <Col>
-            <div class="box1">
-              <Link to="/dashboard">
-              <RiFileList3Line className="icons"/>
-                <div class="box2">Shitje Javore</div>
-              </Link>
-            </div>
-          </Col>
-          
-        </Row>
-        </div>
+              <Col>
+                <Link to="/dashboard" style={{ textDecoration: "none" }}>
+                  <div class="box1">
+                    <RiFileList3Line className="icons" />
+                    <div class="boxNr">{dashboard.todaySales}</div>
+                    <div class="boxText">Shitje Ditore</div>
+                  </div>
+                </Link>
+              </Col>
+
+              <Col>
+                <Link to="/dashboard" style={{ textDecoration: "none" }}>
+                  <div class="box1">
+                    <RiFileList3Line className="icons" />
+                    <div class="boxNr">{dashboard.weeklySales}</div>
+                    <div class="boxText">Shitje Javore</div>
+                  </div>
+                </Link>
+              </Col>
+            </Row>
+          </div>
         </div>
       </Container>
     </>

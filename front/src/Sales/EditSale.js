@@ -12,11 +12,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "reactstrap";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
 import { Button, Form } from "react-bootstrap";
-import "./AddCustomer.css";
+import "../Products/AddProduct.css";
 import axios from "axios";
 
-function EditCustomer() {
-  const [customer, setCustomer] = useState({});
+function EditSale() {
+  const [sale, setSale] = useState({});
 
   const params = useParams();
   const history = useHistory();
@@ -24,9 +24,9 @@ function EditCustomer() {
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/Customer/${params.id}`
+        `http://localhost:5000/api/sale/${params.id}`
       );
-      setCustomer(response.data);
+      setSale(response.data);
     } catch (err) {
       history.push("/dashboard");
     }
@@ -34,71 +34,81 @@ function EditCustomer() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setCustomer({ ...customer, [name]: value });
+    setSale({ ...sale, [name]: value });
   };
 
-  const editCustomer = async () => {
+  const editSale = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/Customer/${params.id}`,
+        `http://localhost:5000/api/sale/${params.id}`,
         {
-          ...customer,
+          ...sale,
         }
       );
-      history.push("/customers");
+      history.push("/furnitoret");
     } catch (err) {
-      alert("Something went wrong while trying to edit this customer");
+      alert("Something went wrong while trying to edit this sale");
     }
   };
 
   return (
     <>
       <Navbar />
-      {customer && (
+      {sale && (
         <div class="forma1">
           <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Emri i Konsumatorit</Form.Label>
+              <Form.Label>ID e fatures</Form.Label>
               <Form.Control
-                value={customer.firstName}
+                value={sale.InvoiceId}
                 onChange={handleChange}
-                name="firstName"
+                name="name"
                 type="text"
-                placeholder="Emri Konsumtaorit"
+                placeholder="ID e fatures"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Mbiemri i Konsumatorit</Form.Label>
+              <Form.Label>ID e perdoruesit</Form.Label>
               <Form.Control
-                value={customer.lastName}
-                onChange={handleChange}
-                name="lastName"
-                type="text"
-                placeholder="Mbiemri Konsumtaorit"
-              />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Kontakti</Form.Label>
-              <Form.Control
-                value={customer.contact}
+                value={sale.UserId}
                 onChange={handleChange}
                 name="contact"
                 type="text"
-                placeholder="Kontakti Konsumatorit"
+                placeholder="ID e Perdoruesit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Kontakti</Form.Label>
+              <Form.Label>Sasia</Form.Label>
               <Form.Control
-                value={customer.address}
+                value={sale.Quantity}
                 onChange={handleChange}
                 name="address"
                 type="text"
-                placeholder="Adresa Konsumatorit"
+                placeholder="Sasia"
               />
             </Form.Group>
-            <Button variant="primary" onClick={editCustomer}>
-              Ndrysho Produktin
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Qmimi per Njesi</Form.Label>
+              <Form.Control
+                value={sale.UnitPrice}
+                onChange={handleChange}
+                name="email"
+                type="text"
+                placeholder="Qmimi per Njesi"
+              />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Zbritja</Form.Label>
+              <Form.Control
+                value={sale.Discount}
+                onChange={handleChange}
+                name="email"
+                type="text"
+                placeholder="Zbritja"
+              />
+            </Form.Group>
+            <Button variant="primary" onClick={editSale}>
+              Ndrysho Shitjen
             </Button>
           </Form>
         </div>
@@ -107,4 +117,4 @@ function EditCustomer() {
   );
 }
 
-export default EditCustomer;
+export default EditSale;

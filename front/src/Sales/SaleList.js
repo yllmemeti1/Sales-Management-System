@@ -4,77 +4,72 @@ import { Link } from "react-router-dom";
 import { Table, Button, Modal } from "react-bootstrap";
 import axios from "axios";
 
-function CustomersList() {
-  const [customers, setCustomers] = useState([]);
+function SalesList() {
+  const [sales, setSales] = useState([]);
   const [deleteModal, setDeleteModal] = useState(false);
-  const [customerToDeleteId, setCustomerToDeleteId] = useState(null);
+  const [saleToDeleteId, setSaleToDeleteId] = useState(null);
 
   const handleClose = () => setDeleteModal(false);
   const handleShow = () => setDeleteModal(true);
 
   useEffect(async () => {
-    const getCustomers = async () => {
-      const response = await axios.get("http://localhost:5000/api/Customer");
-      setCustomers(response.data);
+    const getSales = async () => {
+      const response = await axios.get("http://localhost:5000/api/sale");
+      setSales(response.data);
     };
 
-    try {
-      await getCustomers();
-    } catch (err) {
-      alert("Something went wrong while trying to add this customer");
-    }
+    await getSales();
   }, []);
 
-  const deleteCustomer = async () => {
-    if (customerToDeleteId) {
+  const deleteSale = async () => {
+    if (saleToDeleteId) {
       try {
-        await axios.delete(
-          `http://localhost:5000/api/Customer/${customerToDeleteId}`
-        );
+        await axios.delete(`http://localhost:5000/api/sale/${saleToDeleteId}`);
 
-        setCustomers(customers.filter((p) => p.id !== customerToDeleteId));
+        setSales(sales.filter((p) => p.id !== saleToDeleteId));
         handleClose();
       } catch (err) {
-        alert("Something went wrong while trying to delete this customer");
+        alert("Something went wrong while trying to delete this sale");
       }
     }
   };
 
   const handleDeleteDialog = (id) => {
     handleShow();
-    setCustomerToDeleteId(id);
+    setSaleToDeleteId(id);
   };
 
   return (
     <>
       <Navbar />
-      <Link to="/customers/regjistro">
-        <Button class="bttn1" variant="secondary" type="submit">
-          Shto Konsumatorin
+      <Link to="/sales/regjistro">
+        <Button class=" btn btn-primary " type="submit">
+          Shto Shitje
         </Button>
       </Link>
-      {customers && (
+      {sales && (
         <div style={{ padding: "50px" }}>
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Contact</th>
-                <th>Address</th>
+                <th>ID e fatures</th>
+                <th>Id e perdoruesit</th>
+                <th>Sasia</th>
+                <th>Qmimi Njesi</th>
+                <th>Zbritja</th>
               </tr>
             </thead>
             <tbody>
-              {customers.map((customer) => (
+              {sales.map((sale) => (
                 <tr>
-                  <td>{customer.firstName}</td>
-                  <td>{customer.lastName}</td>
-                  <td>{customer.contact}</td>
-                  <td>{customer.address}</td>
-
+                  <td>{sale.InvoiceId}</td>
+                  <td>{sale.UserId}</td>
+                  <td>{sale.Quantity}</td>
+                  <td>{sale.UnitPrice}</td>
+                  <td>{sale.Discount}</td>
                   <td>
                     <div style={{ display: "flex" }}>
-                      <Link to={`/customers/ndrysho/${customer.id}`}>
+                      <Link to={`/sales/ndrysho/${sale.id}`}>
                         <Button
                           style={{ marginRight: "5px" }}
                           variant="primary"
@@ -83,7 +78,7 @@ function CustomersList() {
                         </Button>
                       </Link>
                       <Button
-                        onClick={() => handleDeleteDialog(customer.id)}
+                        onClick={() => handleDeleteDialog(sale.id)}
                         variant="danger"
                       >
                         Fshij
@@ -99,16 +94,16 @@ function CustomersList() {
 
       <Modal show={deleteModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Fshij konsumatorin</Modal.Title>
+          <Modal.Title>Fshij furnitorin</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          A je i sigurt qe deshiron te fshish kete konsumator?
+          A je i sigurt qe deshiron te fshish kete furnitor?
         </Modal.Body>
         <Modal.Footer>
           <Button variant="info" onClick={handleClose}>
             Mbyll
           </Button>
-          <Button onClick={deleteCustomer} variant="danger">
+          <Button onClick={deleteSale} variant="danger">
             Fshij
           </Button>
         </Modal.Footer>
@@ -117,4 +112,4 @@ function CustomersList() {
   );
 }
 
-export default CustomersList;
+export default SalesList;

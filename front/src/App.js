@@ -26,6 +26,13 @@ import CustomerDetails from "./Customer/CustomerDetails";
 import AddCustomer from "./Customer/AddCustomer";
 import EditCustomer from "./Customer/EditCustomer";
 
+import SaleList from "./Sales/SaleList";
+import SaleDetails from "./Sales/SaleDetails";
+import AddSale from "./Sales/AddSale";
+import EditSale from "./Sales/EditSale";
+
+
+
 function App() {
   return (
     <div className="wrapper">
@@ -46,16 +53,17 @@ function App() {
           <Route exact path="/furnitoret" component={SuppliersList} />
           <Route exact path="/furnitoret/regjistro" component={AddSupplier} />
           <Route exact path="/furnitoret/:id" component={SupplierDetails} />
-          <Route
-            exact
-            path="/furnitoret/ndrysho/:id"
-            component={EditSupplier}
-          />
+          <Route exact path="/furnitoret/ndrysho/:id" component={EditSupplier}/>
 
           <Route exact path="/customers" component={CustomerList} />
           <Route exact path="/customers/regjistro" component={AddCustomer} />
           <Route exact path="/customers/:id" component={CustomerDetails} />
           <Route exact path="/customers/ndrysho/:id" component={EditCustomer} />
+
+          <Route exact path="/sales" component={SaleList} />
+          <Route exact path="/sales/regjistro" component={AddSale} />
+          <Route exact path="/sales/:id" component={SaleDetails} />
+          <Route exact path="/sales/ndrysho/:id" component={EditSale} />
 
           <Route exact path="/kategorite" component={CategoriesList} />
           <Route

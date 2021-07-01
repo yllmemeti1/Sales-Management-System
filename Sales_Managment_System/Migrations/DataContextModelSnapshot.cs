@@ -16,7 +16,7 @@ namespace Sales_Managment_System.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -287,8 +287,6 @@ namespace Sales_Managment_System.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    
-
                     b.Property<int>("UnitsInStock")
                         .HasColumnType("int");
 
@@ -298,8 +296,6 @@ namespace Sales_Managment_System.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("SubCategoryId");
 
                     b.ToTable("Products");
                 });
@@ -400,8 +396,6 @@ namespace Sales_Managment_System.Migrations
 
                     b.ToTable("Sales");
                 });
-
-            
 
             modelBuilder.Entity("Sales_Managment_System.Common.Entities.Supplier", b =>
                 {
@@ -580,18 +574,10 @@ namespace Sales_Managment_System.Migrations
                     b.HasOne("Sales_Managment_System.Common.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Sales_Managment_System.Common.Entities.SubCategory", "SubCategory")
-                        .WithMany("Products")
-                        .HasForeignKey("SubCategoryId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Category");
-
-                    b.Navigation("SubCategory");
                 });
 
             modelBuilder.Entity("Sales_Managment_System.Common.Entities.ProductUnit", b =>
@@ -639,17 +625,6 @@ namespace Sales_Managment_System.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Sales_Managment_System.Common.Entities.SubCategory", b =>
-                {
-                    b.HasOne("Sales_Managment_System.Common.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("Sales_Managment_System.Common.Entities.Category", b =>
                 {
                     b.Navigation("Products");
@@ -668,11 +643,6 @@ namespace Sales_Managment_System.Migrations
             modelBuilder.Entity("Sales_Managment_System.Common.Entities.Product", b =>
                 {
                     b.Navigation("Units");
-                });
-
-            modelBuilder.Entity("Sales_Managment_System.Common.Entities.SubCategory", b =>
-                {
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Sales_Managment_System.Common.Entities.Supplier", b =>

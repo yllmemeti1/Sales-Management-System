@@ -19,7 +19,7 @@ function AddCustomer() {
   const addCustomer = async () => {
     console.log("Customer to add", customer);
     try {
-      const response = await axios.post("http://localhost:63717/api/Customer", {
+      const response = await axios.post("http://localhost:5000/api/Customer", {
         ...customer,
       });
 

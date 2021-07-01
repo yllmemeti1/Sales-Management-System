@@ -21,9 +21,21 @@ namespace Sales_Managment_System.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllCategories()
+        public async Task<IActionResult> GetAllCategories(DateTime startDate, DateTime endDate)
         {
-            return Ok(await _context.Categories.ToListAsync());
+            var categories = _context.Categories.AsQueryable();
+
+            if(startDate != default)
+            {
+                categories = categories.Where(c => c.InsertedAt >= startDate);
+            }
+
+            if(endDate != default)
+            {
+                categories = categories.Where(c => c.InsertedAt <= endDate);
+            }
+
+            return Ok(await categories.ToListAsync());
         }
 
         [HttpGet("{CategoryId}")]
