@@ -13,7 +13,7 @@ export class Pako extends Component{
     }
 
     refreshList(){
-        fetch('http://localhost:34361/api/pako')
+        fetch('http://localhost:63717/api/pako')
         .then(response=>response.json())
         .then(data=>{
             this.setState({pakot:data});
@@ -30,7 +30,7 @@ export class Pako extends Component{
 
     deletePako(id){
         if(window.confirm('A jeni i sigurt?')){
-            fetch('http://localhost:34361/api/pako/'+id,{
+            fetch('http://localhost:63717/api/pako/'+id,{
                 method:'DELETE',
                 header:{'Accept':'application/json',
             'Content-Type':'application/json'}

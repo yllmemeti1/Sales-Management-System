@@ -11,7 +11,7 @@ export default function PrivateRoute({ component: Component, ...rest }) {
   useEffect(async () => {
     async function authorizeUser() {
       console.log(localStorage.getItem("sms_token"));
-      const res = await axios.get("http://localhost:5000/api/Base", {
+      const res = await axios.get("http://localhost:63717/api/Base", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("sms_token"),
         },

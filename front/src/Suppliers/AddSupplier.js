@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
-import "../Products/AddProduct.css";
+import "../Suppliers/AddSupplier.css";
 import axios from "axios";
 
 function AddSupplier() {
@@ -18,7 +18,7 @@ function AddSupplier() {
 
   const addSupplier = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/supplier", {
+      const response = await axios.post("http://localhost:63717/api/supplier", {
         ...supplier,
       });
 

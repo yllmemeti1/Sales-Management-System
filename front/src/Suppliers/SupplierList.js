@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { Table, Button, Modal } from "react-bootstrap";
 import axios from "axios";
+import "../Suppliers/SupplierList.css";
 
 function SuppliersList() {
   const [suppliers, setSuppliers] = useState([]);
@@ -14,7 +15,7 @@ function SuppliersList() {
 
   useEffect(async () => {
     const getSuppliers = async () => {
-      const response = await axios.get("http://localhost:5000/api/supplier");
+      const response = await axios.get("http://localhost:63717/api/supplier");
       setSuppliers(response.data);
     };
 
@@ -25,7 +26,7 @@ function SuppliersList() {
     if (supplierToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/supplier/${supplierToDeleteId}`
+          `http://localhost:63717/api/supplier/${supplierToDeleteId}`
         );
 
         setSuppliers(suppliers.filter((p) => p.id !== supplierToDeleteId));
@@ -53,6 +54,13 @@ function SuppliersList() {
                 <th>Contact</th>
                 <th>Address</th>
                 <th>Email</th>
+                <th> <div class="bttn1">
+                    <Link to="/furnitoret/regjistro">
+                      <Button class=" btn btn-primary " type="submit">
+                        Shto Furnizuesin
+                      </Button>
+                    </Link>
+                  </div></th>
               </tr>
             </thead>
             <tbody>

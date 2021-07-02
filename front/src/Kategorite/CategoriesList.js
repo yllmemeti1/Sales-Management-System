@@ -17,7 +17,7 @@ function CategoriesList() {
 
   useEffect(async () => {
     const getCategories = async () => {
-      const response = await axios.get("http://localhost:5000/api/category");
+      const response = await axios.get("http://localhost:63717/api/category");
       setCategories(response.data);
     };
 
@@ -32,7 +32,7 @@ function CategoriesList() {
     if (categoryToDeleteId) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/category/${categoryToDeleteId}`
+          `http://localhost:63717/api/category/${categoryToDeleteId}`
         );
 
         setCategories(categories.filter((c) => c.id !== categoryToDeleteId));
@@ -57,7 +57,7 @@ function CategoriesList() {
 
     const getCategories = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/category?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`
+        `http://localhost:63717/api/category?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`
       );
       console.log(response);
       setCategories(response.data);
@@ -116,9 +116,11 @@ function CategoriesList() {
           Deri më:
           <DatePicker onChange={setEndDate} value={endDate} />
         </div>
-        <Button variant="primary" onClick={filterCategoriesByDate}>
+        <div class="filtroButton">
+        <Button variant="primary"  onClick={filterCategoriesByDate}>
           Filtro
         </Button>
+        </div>
       </div>
       {categories && (
         <div

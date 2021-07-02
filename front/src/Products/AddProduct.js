@@ -18,7 +18,7 @@ function AddProduct() {
 
   useEffect(() => {
     async function getProduct() {
-      const response = await axios.get("http://localhost:5000/api/Category");
+      const response = await axios.get("http://localhost:63717/api/Category");
       setCategories(response.data);
       console.log(response.data);
     }
@@ -33,7 +33,7 @@ function AddProduct() {
 
   const addProduct = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/Product", {
+      const response = await axios.post("http://localhost:63717/api/Product", {
         ...product,
       });
 

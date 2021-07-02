@@ -91,7 +91,7 @@ input {
 
 body {
   background-image: url("../assets/backgroundi-JS.jpg");
-  background-size:100%;
+  background-size:cover;
   font-family: sans-serif;
   background-repeat: no-repeat;
 }

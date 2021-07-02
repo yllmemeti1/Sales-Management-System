@@ -15,7 +15,7 @@ function Dashboard() {
 
   useEffect(async () => {
     const getDashboard = async () => {
-      const response = await axios.get("http://localhost:5000/api/dashboard");
+      const response = await axios.get("http://localhost:63717/api/dashboard");
       console.log("Dashboard", response.data);
       setDashboard(response.data);
     };
