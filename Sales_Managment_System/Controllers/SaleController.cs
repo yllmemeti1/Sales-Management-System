@@ -5,8 +5,6 @@ using Sales_Managment_System.Common.Models;
 using Sales_Managment_System.Common.Models.Sale;
 using Sales_Managment_System.Persistence;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Sales_Managment_System.Controllers
@@ -23,7 +21,7 @@ namespace Sales_Managment_System.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllSales()
         {
-            return Ok(await _context.Sales.ToListAsync());
+            return Ok(await _context.Sales.Include(s => s.User).ToListAsync());
         }
 
         [HttpGet("{saleId}")]

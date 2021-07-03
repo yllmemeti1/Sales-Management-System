@@ -12,13 +12,13 @@ function SalesList() {
   const handleClose = () => setDeleteModal(false);
   const handleShow = () => setDeleteModal(true);
 
-  useEffect(async () => {
+  useEffect(() => {
     const getSales = async () => {
       const response = await axios.get("http://localhost:63717/api/sale");
       setSales(response.data);
     };
 
-    await getSales();
+    getSales();
   }, []);
 
   const deleteSale = async () => {
@@ -53,7 +53,7 @@ function SalesList() {
             <thead>
               <tr>
                 <th>ID e fatures</th>
-                <th>Id e perdoruesit</th>
+                <th>Perdoruesi</th>
                 <th>Sasia</th>
                 <th>Qmimi Njesi</th>
                 <th>Zbritja</th>
@@ -62,11 +62,11 @@ function SalesList() {
             <tbody>
               {sales.map((sale) => (
                 <tr>
-                  <td>{sale.InvoiceId}</td>
-                  <td>{sale.UserId}</td>
-                  <td>{sale.Quantity}</td>
-                  <td>{sale.UnitPrice}</td>
-                  <td>{sale.Discount}</td>
+                  <td>{sale.invoiceId}</td>
+                  <td>{sale.user.userName}</td>
+                  <td>{sale.quantity}</td>
+                  <td>{sale.unitPrice}</td>
+                  <td>{sale.discount}</td>
                   <td>
                     <div style={{ display: "flex" }}>
                       <Link to={`/sales/ndrysho/${sale.id}`}>
