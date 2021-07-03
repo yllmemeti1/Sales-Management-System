@@ -40,47 +40,47 @@ function AddSupplier() {
         <div class="forma1">
           <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Emri i Supplier</Form.Label>
+              <Form.Label>Emri i Furnizuesit</Form.Label>
               <Form.Control
                 value={supplier.name}
                 onChange={handleChange}
                 name="name"
                 type="text"
-                placeholder="Emri i Supplier"
+                placeholder="Emri i Furnizuesit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Nr i telefonit te Supplier</Form.Label>
+              <Form.Label>Nr i telefonit te Furnizuesit</Form.Label>
               <Form.Control
                 value={supplier.contact}
                 onChange={handleChange}
                 name="contact"
                 type="text"
-                placeholder="Nr i telefonit te Supplier"
+                placeholder="Nr i telefonit te Furnizuesit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Adresa e Supplier</Form.Label>
+              <Form.Label>Adresa e Furnizuesit</Form.Label>
               <Form.Control
                 value={supplier.address}
                 onChange={handleChange}
                 name="address"
                 type="text"
-                placeholder="Adresa e supplier"
+                placeholder="Adresa e Furnizuesit"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Email i Supplier</Form.Label>
+              <Form.Label>Email i Furnizuesit</Form.Label>
               <Form.Control
                 value={supplier.email}
                 onChange={handleChange}
                 name="email"
                 type="text"
-                placeholder="Email i Supplier"
+                placeholder="Email i Furnizuesit"
               />
             </Form.Group>
             <Button variant="primary" onClick={addSupplier}>
-              Shto Supplier
+              Shto Furnizuesin
             </Button>
           </Form>
         </div>

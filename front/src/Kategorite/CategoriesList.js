@@ -152,7 +152,7 @@ function CategoriesList() {
 
                   <td>
                     <div style={{ display: "flex", borderColor: "black" }}>
-                      <Link to={`/categories/ndrysho/${category.id}`}>
+                      <Link to={`/kategorite/ndrysho/${category.id}`}>
                         <Button
                           style={{ marginRight: "5px" }}
                           variant="primary"
